@@ -4,7 +4,7 @@
 # Time-stamp: <2011-07-17 21:08:33 Sunday by taoshanwen>
 
 # @version 1.0
-# @author ahei
+# @author chihuanqi
 
 class (>>>FILE_SANS<<<):
     def __init__(self):

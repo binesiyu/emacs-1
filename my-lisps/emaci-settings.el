@@ -4,10 +4,10 @@
 (require 'util)
 (require 'emaci)
 
-(apply-define-key
- global-map
- `(("M-s" emaci-mode-on)
-   ("M-S" emaci-mode-off)))
+;;(apply-define-key
+;; global-map
+;; `(("M-s" emaci-mode-on)
+;;   ("M-S" emaci-mode-off)))
 
 (eal-define-keys
  'emaci-mode-map
