@@ -28,7 +28,8 @@
 
 (eal-define-keys
  'py-mode-map
- `(("C-c C-c" comment)
+ `(
+   ;("C-c C-c" comment)
    ("C-x n"   multi-term-next)))
 
 (defun python-settings ()
