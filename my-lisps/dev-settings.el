@@ -124,19 +124,19 @@
 (require 'sh-mode-settings)
 
 ;; xml mode配置
-(require 'sgml-mode-settings)
+;;(require 'sgml-mode-settings)
 
-(require 'html-mode-settings)
+;;(require 'html-mode-settings)
 
 ;; ruby
-(require 'ruby-settings)
+;;(require 'ruby-settings)
 
 ;; rails
 (require 'rails-settings)
 
-(require 'php-mode)
+;;(require 'php-mode)
 
-(require 'sql-settings)
+;;(require 'sql-settings)
 
 (setq my-shebang-patterns
       (list "^#!\\s-*/usr/.*/perl\\(\\( \\)\\|\\( .+ \\)\\)-w *.*"
@@ -191,9 +191,13 @@
 ;; 回车后indent
 (eal-define-keys
  `(lisp-mode-map emacs-lisp-mode-map lisp-interaction-mode-map sh-mode-map
-                 ,(if (not is-before-emacs-21) 'awk-mode-map) java-mode-map
-                 ruby-mode-map c-mode-base-map tcl-mode-map org-mode-map
-                 python-mode-map perl-mode-map)
+                 ,(if (not is-before-emacs-21) 'awk-mode-map) 
+                 ;;java-mode-map
+                 ;;ruby-mode-map 
+                 c-mode-base-map tcl-mode-map org-mode-map
+                 python-mode-map 
+                 ;;perl-mode-map
+                 )
  `(("RET" newline-and-indent)))
 
 (defun copy-current-fun-name ()
@@ -212,14 +216,15 @@
                  ;; 把speedbar放到当前frame里面
                  sr-speedbar-settings
                  codepilot-settings
-                 perl-settings
+                 ;;perl-settings
                  ;; 实现程序变量的自动对齐
                  align-settings
                  ;; 生成c程序调用图
                  ;; http://emacser.com/emacs-cflow.htm
-                 cflow-mode-settings
+                 ;;cflow-mode-settings
                  python-settings
-                 sed-settings
-                 lua-mode-settings))
+                 ;;sed-settings
+                 lua-mode-settings
+                 ))
 
 (provide 'dev-settings)
