@@ -57,8 +57,8 @@
 ;;   (menu-bar-mode -1))
 ;;(menu-bar-mode -1)
 ;; GUI下显示toolbar的话select-buffer会出问题
-;;(if (fboundp 'tool-bar-mode)
-   ;; (tool-bar-mode -1))
+(if (fboundp 'tool-bar-mode)
+    (tool-bar-mode -1))
 
 ;; 打开压缩文件时自动解压缩
 ;; 必须放在session前面
@@ -514,14 +514,14 @@
 ;;;;(require 'session-settings)
 ;;;
 ;;;;; 王纯业的desktop, 比desktop快多了
-;;;;(require 'wcy-desktop-settings)
+;;(require 'wcy-desktop-settings)
 ;;;
 ;;;;; HACK: 要放在最后,免得会出现比较奇怪的现象
 ;;;;; 保存和恢复工作环境
 ;;;;; desktop,用来保存Emacs的桌面环境 — buffers、以及buffer的文件名、major modes和位置等等
-;;;;; (require 'desktop-settings)
+(require 'desktop-settings)
 ;;;
-;;;;(sb-update)
+(sb-update)
 ;;;
 ;;;;; 加载用户自己的配置
-(load "~/.my.emacs" t)
+(load "~/.emacs.my" t)

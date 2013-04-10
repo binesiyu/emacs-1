@@ -30,7 +30,7 @@
   (add-to-list 'ac-dictionary-directories (concat my-emacs-lisps-path "auto-complete/dict"))
 
   (setq ac-auto-show-menu t
-        ac-auto-start t
+        ac-auto-start nil
         ac-dwim t
         ac-candidate-limit ac-menu-height
         ac-quick-help-delay .5

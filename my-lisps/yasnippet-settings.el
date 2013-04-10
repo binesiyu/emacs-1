@@ -31,9 +31,9 @@
  `(("M-j"     yas/next-field-or-maybe-expand)
    ("M-k"     yas/prev-field)))
 
-(eal-define-keys
- 'yas/minor-mode-map
- `(("C-c C-f" yas/find-snippets)))
+;;(eal-define-keys
+;; 'yas/minor-mode-map
+;; `(("C-c C-f" yas/find-snippets)))
 
 (eval-after-load "yasnippet"
   `(yasnippet-settings))
