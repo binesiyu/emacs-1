@@ -92,27 +92,27 @@
 ;; cedet 强大的开发工具, 包括代码浏览, 补全, 类图生成
 ;; 用CEDET浏览和编辑C++代码 http://emacser.com/cedet.htm
 ;; Emacs才是世界上最强大的IDE － cedet的安装 http://emacser.com/install-cedet.htm
-(require 'cedet-settings)
+;;(require 'cedet-settings)
 
 ;; ecb 代码浏览器
-(require 'ecb-settings)
+;(require 'ecb-settings)
 
 ;; doxygen
-(require 'doxymacs-settings)
+;(require 'doxymacs-settings)
 
-(require 'autoconf-mode-settings)
+;(require 'autoconf-mode-settings)
 
 ;; 像Eclipse那样高亮光标处单词
 (require 'highlight-symbol-settings)
 
 ;; `gdb'
-(require 'gud-settings)
+;(require 'gud-settings)
 
 ;; subversion
-(require 'svn-settings)
+;(require 'svn-settings)
 
 ;; 版本控制
-(require 'vc-settings)
+;(require 'vc-settings)
 
 ;; 所有的自动补全的配置
 (require 'all-auto-complete-settings)
@@ -121,7 +121,7 @@
 (require 'all-lisp-settings)
 
 ;; 开发shell程序的mode配置
-(require 'sh-mode-settings)
+;(require 'sh-mode-settings)
 
 ;; xml mode配置
 ;;(require 'sgml-mode-settings)
@@ -132,7 +132,7 @@
 ;;(require 'ruby-settings)
 
 ;; rails
-(require 'rails-settings)
+;(require 'rails-settings)
 
 ;;(require 'php-mode)
 
@@ -183,10 +183,10 @@
 (require 'eclim-settings)
 
 ;; 方便开发c/c++的配置
-(require 'c-settings)
+;(require 'c-settings)
 
 ;; 放在kde-emacs后面
-(require 'compile-settings)
+;(require 'compile-settings)
 
 ;; 回车后indent
 (eal-define-keys
@@ -205,26 +205,26 @@
   (interactive)
   (kill-new (which-function)))
 
-(mapc 'require '(;; hide region
-                 hide-region-settings
-                 ;; hide lines
-                 hide-lines
-                 ;; 把imenu以tree的形式显示出来
-                 imenu-tree-settings
-                 ;; 高亮引用的函数和变量
-                 zjl-hl-settings
-                 ;; 把speedbar放到当前frame里面
-                 sr-speedbar-settings
-                 codepilot-settings
-                 ;;perl-settings
-                 ;; 实现程序变量的自动对齐
-                 align-settings
-                 ;; 生成c程序调用图
-                 ;; http://emacser.com/emacs-cflow.htm
-                 ;;cflow-mode-settings
-                 python-settings
-                 ;;sed-settings
-                 lua-mode-settings
-                 ))
+;(mapc 'require '(;; hide region
+;                 hide-region-settings
+;                 ;; hide lines
+;                 hide-lines
+;                 ;; 把imenu以tree的形式显示出来
+;                 imenu-tree-settings
+;                 ;; 高亮引用的函数和变量
+;                 zjl-hl-settings
+;                 ;; 把speedbar放到当前frame里面
+;                 sr-speedbar-settings
+;                 codepilot-settings
+;                 ;;perl-settings
+;                 ;; 实现程序变量的自动对齐
+;                 align-settings
+;                 ;; 生成c程序调用图
+;                 ;; http://emacser.com/emacs-cflow.htm
+;                 ;;cflow-mode-settings
+;                 python-settings
+;                 ;;sed-settings
+;                 lua-mode-settings
+;                 ))
 
 (provide 'dev-settings)

@@ -54,7 +54,7 @@ and `transient-mark-mode'." t)
   `(c-mode-base-map emacs-lisp-mode-map lisp-interaction-mode-map
                     conf-javaprop-mode-map html-mode-map tcl-mode-map
                     autoconf-mode-map perl-mode-map nxml-mode-map
-                    python-mode-map graphviz-dot-mode-map lua-mode-map))
+                    python-mode-map graphviz-dot-mode-map))
  `(("C-c C-c" comment)))
 
 ;;;###autoload
