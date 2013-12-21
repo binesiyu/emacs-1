@@ -184,7 +184,7 @@ a command."
    ("m"       back-to-indentation)
    ("q"       emaci-q)
    ("["       emaci-\[)
-   ("Q"       delete-current-window)
+   ("0"       delete-current-window)
    ("1"       delete-other-windows)
    ("2"       split-window-vertically)
    ("3"       split-window-horizontally)

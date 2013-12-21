@@ -31,6 +31,6 @@
 (require 'ido-settings)
 
 ;; 像linux系统下alt-tab那样选择buffer, 但是更直观, 更方便
-(require 'select-buffer)
+;(require 'select-buffer)
 
 (provide 'all-buffer-settings)

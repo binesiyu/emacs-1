@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-08-08 12:04:13 Sunday by taoshanwen>
+;; Time-stamp: <2013-12-21 14:06:57 Saturday by yubin>
 
 (if is-before-emacs-21
     (require 'ido "ido-for-21"))
@@ -13,7 +13,7 @@
       (setq read-buffer-function 'ido-read-buffer)
     (ido-everywhere t)
     (setq ido-define-mode-map-hook 'ido-setup-hook))
-
+  (setq ido-use-filename-at-point t)
   (add-hook ido-define-mode-map-hook 'ido-keys)
 
   (global-set-key (kbd "C-x C-f") 'ido-find-file)

@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-05-06 20:55:41 Sunday by ahei>
+;; Time-stamp: <2013-12-21 14:32:30 Saturday by yubin>
 
 (setq max-lisp-eval-depth 40000)        ;lisp最大执行深度
 (setq max-specpdl-size 10000)           ;最大容量
@@ -43,7 +43,7 @@
 (require 'rect-mark-settings)
 
 ;; 鼠标配置
-(require 'mouse-settings)
+;(require 'mouse-settings)
 
 ;; 关于mark的一些设置，使你非常方便的选择region
 (require 'mark-settings)
@@ -271,16 +271,16 @@
 ;; ack-grep, grep纯perl的代替品
 (require 'full-ack-settings)
 
-(eal-define-keys-commonly
- global-map
- `(("M-r"     query-replace-sb)
-   ("M-%"     query-replace-sb)
-   ("ESC M-%" query-replace-regexp-sb)
-   ("ESC M-r" query-replace-regexp-sb)
-   ("C-x M-r" query-replace-regexp-sb)
-   ("M-z"     zap-to-char-sb)
-   ("C-j"     goto-line)
-   ("C-x C-s" save-buffer-sb)))
+;(eal-define-keys-commonly
+; global-map
+; `(("M-r"     query-replace-sb)
+;   ("M-%"     query-replace-sb)
+;   ("ESC M-%" query-replace-regexp-sb)
+;   ("ESC M-r" query-replace-regexp-sb)
+;   ("C-x M-r" query-replace-regexp-sb)
+;   ("M-z"     zap-to-char-sb)
+;   ("C-j"     goto-line)
+;   ("C-x C-s" save-buffer-sb)))
 
 (am-add-hooks
  `(find-file-hook)
@@ -525,7 +525,7 @@ If the file does not exist, an error is thrown.")
 ;; desktop,用来保存Emacs的桌面环境 — buffers、以及buffer的文件名、major modes和位置等等
 ;; (require 'desktop-settings)
 
-(sb-update)
+;(sb-update)
 
 ;; 加载用户自己的配置
 (load "~/my.emacs" t)

@@ -31,7 +31,7 @@
     "Run `switch-major-mode' with `emaci-mode'."
     (interactive)
     (let ((emaci emaci-mode))
-      (call-interactively 'switch-major-mode)
+      ;(call-interactively 'switch-major-mode)
       (emaci-mode (if emaci 1 -1))))
 
   (eal-define-keys-commonly
