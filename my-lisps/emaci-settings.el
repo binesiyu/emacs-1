@@ -1,5 +1,5 @@
 ;; -*- Emacs-Lisp -*-
-;; Time-stamp: <2010-12-01 11:57:41 Wednesday by taoshanwen>
+;; Time-stamp: <2013-12-21 17:38:58 Saturday by yubin>
 
 (require 'util)
 (require 'emaci)
@@ -31,12 +31,20 @@
     "Run `switch-major-mode' with `emaci-mode'."
     (interactive)
     (let ((emaci emaci-mode))
-      ;(call-interactively 'switch-major-mode)
+      (call-interactively 'switch-major-mode)
       (emaci-mode (if emaci 1 -1))))
 
+  ;;;###autoload
+  (defun toggole-emaci-mode ()
+    "toggole-emaci-status"
+    (interactive)
+    (if emaci-mode
+        (emaci-mode-off)
+      (emaci-mode-on)))
+  
   (eal-define-keys-commonly
    global-map
-   `(("C-x q" switch-major-mode-with-emaci))))
+   `(("C-x q" toggole-emaci-mode))))
 
 (eval-after-load "emaci"
   `(emaci-settings))

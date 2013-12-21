@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-11-30 09:55:29 Tuesday by taoshanwen>
+;; Time-stamp: <2013-12-21 17:29:30 Saturday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -18,8 +18,8 @@
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 ;; 个人信息
-(setq user-mail-address "chihuanqi@gmail.com")
-(setq user-full-name    "chihuanqi")
+(setq user-mail-address "yubinexsaber@gmail.com")
+(setq user-full-name    "exsaber")
 
 (setq-default default-directory "~")
 
