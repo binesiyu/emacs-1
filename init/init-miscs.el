@@ -92,4 +92,7 @@
 ;; 必须放在session前面
 (auto-compression-mode 1)
 
+;; 用一个很大的kill ring. 这样防止我不小心删掉重要的东西
+(setq kill-ring-max 200)
+
 (provide 'init-miscs)
