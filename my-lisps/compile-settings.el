@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2012-05-23 22:48:29 Wednesday by ahei>
 
-(require 'util)
+(require 'init-utils)
 
 ;; 智能编译
 (require 'my-smart-compile)

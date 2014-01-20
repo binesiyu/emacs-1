@@ -1,4 +1,4 @@
-;;; TEMPLATE.el.tpl --- (>>>POINT<<<)
+;;; (>>>FILE<<<) --- (>>>POINT<<<)
 
 ;; Copyright (>>>YEAR<<<) (>>>USER_NAME<<<)
 ;;
@@ -14,7 +14,7 @@
 
 ;; This file is  distributed in the hope that  it will be useful,
 ;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR  A PARTICULAR PURPOSE.  See the
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;; GNU General Public License for more details.
 
 ;; You  should have  received a  copy of  the GNU  General Public
@@ -22,10 +22,17 @@
 ;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-(defun (>>>FILE_SANS<<<) ()
-  "Settings for `(>>>POINT<<<)'.")
+;;; Commentary:
 
-(eval-after-load ""
-  `((>>>FILE_SANS<<<)))
+;; (>>>2<<<)
+
+;; Put this file into your load-path and the following into your ~/.emacs:
+;;   (require '(>>>FILE_SANS<<<))
+
+;;; Code:
+
+
+(>>>3<<<)
 
 (provide '(>>>FILE_SANS<<<))
+;;; (>>>FILE<<<) ends here

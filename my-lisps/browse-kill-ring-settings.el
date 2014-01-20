@@ -29,7 +29,7 @@
   (def-without-linum-mode "browse-kill-ring-forward")
   (def-without-linum-mode "browse-kill-ring-previous")
 
-  (require 'util)
+  (require 'init-utils)
 
   (defun browse-kill-ring-my-keys ()
     (let ((map browse-kill-ring-mode-map))

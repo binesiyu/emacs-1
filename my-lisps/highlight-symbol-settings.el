@@ -4,7 +4,7 @@
 
 ;; emacser.com/highlight-symbol.htm
 
-(require 'util)
+(require 'init-utils)
 (require 'highlight-symbol)
 
 (when window-system

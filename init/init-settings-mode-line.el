@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2010-04-20 00:00:51 Tuesday by ahei>
 
-(require 'mode-line-face-settings)
+(require 'face-mode-line)
 
 (am-def-active-fun linum-mode linum-mode-active)
 
@@ -163,4 +163,4 @@ mouse-3: Toggle minor modes"
         ":"
         (:eval (or (buffer-file-name) (buffer-name)))))
 
-(provide 'mode-line-settings)
+(provide 'init-settings-mode-line)

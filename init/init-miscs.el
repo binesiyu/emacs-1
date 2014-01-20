@@ -17,10 +17,6 @@
 ;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-;; 个人信息
-(setq user-mail-address "yubinexsaber@gmail.com")
-(setq user-full-name    "exsaber")
-
 (setq-default default-directory "~")
 
 ;; 在fringe上显示一个小箭头指示当前buffer的边界
@@ -74,9 +70,6 @@
 ;;;; 当你在shell、telnet、w3m等模式下时，必然碰到过要输入密码的情况,此时加密显出你的密码
 (add-hook 'comint-output-filter-functions 'comint-watch-for-password-prompt)
 ;;
-;;;; 可以保存你上次光标所在的位置
-(require 'saveplace)
-(setq-default save-place t)
 ;;
 ;;;; 光标靠近鼠标指针时，让鼠标指针自动让开，别挡住视线。
 (mouse-avoidance-mode 'animate)
@@ -87,4 +80,16 @@
 ;;;; 先格式化再补全
 (setq tab-always-indent 'complete)
 
-(provide 'misc-settings)
+;; 不要menu-bar和tool-bar
+;; (unless window-system
+;;   (menu-bar-mode -1))
+(menu-bar-mode -1)
+;; GUI下显示toolbar的话select-buffer会出问题
+(if (fboundp 'tool-bar-mode)
+    (tool-bar-mode -1))
+
+;; 打开压缩文件时自动解压缩
+;; 必须放在session前面
+(auto-compression-mode 1)
+
+(provide 'init-miscs)

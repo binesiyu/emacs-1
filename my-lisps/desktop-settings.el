@@ -4,7 +4,7 @@
 
 (eval-after-load "desktop"
   '(progn
-     (require 'util)
+     (require 'init-utils)
 
      (setq desktop-load-locked-desktop t)
      (if is-before-emacs-21 (desktop-load-default) (desktop-save-mode 1))

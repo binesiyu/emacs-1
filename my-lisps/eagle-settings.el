@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2010-04-10 22:40:48 Saturday by ahei>
 
-(require 'util)
+(require 'init-utils)
 (require 'eagle)
 
 (setq eagle-twitter-username "aheiii"

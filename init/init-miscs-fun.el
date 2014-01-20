@@ -1,4 +1,4 @@
-;;; ahei-misc.el --- Some basic utility function of ahei
+;;; init-miscs-fun.el --- Some basic utility function of ahei
 ;; -*- Emacs-Lisp -*-
 
 ;; Time-stamp: <2010-09-11 09:53:02 Saturday by taoshanwen>
@@ -90,6 +90,6 @@ See also `with-temp-buffer'."
   "STR1 equal ignore case to STR2 or not."
   (string= (downcase str1) (downcase str2)))
 
-(provide 'ahei-misc)
+(provide 'init-miscs-fun)
 
 ;;; ahei-misc.el ends here

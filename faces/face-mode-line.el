@@ -76,4 +76,4 @@
 (eval-after-load "faces"
   `(mode-line-face-settings))
 
-(provide 'mode-line-face-settings)
+(provide 'face-mode-line)

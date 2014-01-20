@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2010-04-10 21:48:09 Saturday by ahei>
 
-(require 'util)
+(require 'init-utils)
 
 (eal-define-keys
  'sgml-mode-map

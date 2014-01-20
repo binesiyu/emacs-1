@@ -40,4 +40,4 @@
   (interactive)
   (revert-buffer-with-coding-system-no-confirm 'gbk))
 
-(provide 'coding-settings)
+(provide 'init-settings-coding)

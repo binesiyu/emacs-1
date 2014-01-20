@@ -56,7 +56,7 @@
 
 (require 'view)
 (require 'misc)
-(require 'ahei-misc)
+(require 'init-miscs)
 (require 'eval-after-load)
 
 (defgroup emaci nil

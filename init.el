@@ -1,73 +1,56 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2013-12-21 14:32:30 Saturday by yubin>
+;; Time-stamp: <2014-01-20 13:32:47 Monday by yubin>
 
-(setq max-lisp-eval-depth 40000)        ;lisp最大执行深度
-(setq max-specpdl-size 10000)           ;最大容量
-(setq debug-on-error t)
-;;(setq debug-on-quit t)
+(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/init"))
 
-(defconst my-emacs-path "~/.emacs.d/" "我的emacs相关配置文件的路径")
-(defconst my-emacs-my-lisps-path  (concat my-emacs-path "my-lisps/") "我自己写的emacs lisp包的路径")
-(defconst my-emacs-lisps-path     (concat my-emacs-path "lisps/") "我下载的emacs lisp包的路径")
-(defconst my-emacs-templates-path (concat my-emacs-path "templates/") "Path for templates")
+(require 'init-path)
 
-;; 把`my-emacs-lisps-path'的所有子目录都加到`load-path'里面
-(load (concat my-emacs-my-lisps-path "my-subdirs"))
-(my-add-subdirs-to-load-path my-emacs-lisps-path)
-(my-add-subdirs-to-load-path my-emacs-my-lisps-path)
+;;my
+(require 'init-my)
+;;buildin-package
+(require 'init-buildin)
 
-;; 一个Emacs的16进制文件查看器，可以瞬间打开巨大的文件，比官方的hexl-mode好用
-(require 'hexview-mode)
+;;init-elpa
+(require 'init-elpa)
+(require 'init-package)
 
 ;; 一些基本的小函数
-(require 'ahei-misc)
+(require 'init-miscs-fun)
 
 ;; 利用`eval-after-load'加快启动速度的库
 ;; 用eval-after-load避免不必要的elisp包的加载
-;; http://emacser.com/eval-after-load.htm
 (require 'eval-after-load)
 
-(require 'util)
+(require 'init-utils )
 
 ;; 一些Emacs的小设置
-(require 'misc-settings)
+(require 'init-miscs)
 
 ;; 编码设置
-(require 'coding-settings)
+(require 'init-settings-coding)
 
 ;; CUA的矩阵区域操作特别方便
-(require 'cua-settings)
+;(require 'cua-settings)
 
 ;; 矩形区域操作
-(require 'rect-mark-settings)
+;(require 'rect-mark-settings)
 
 ;; 鼠标配置
 ;(require 'mouse-settings)
 
 ;; 关于mark的一些设置，使你非常方便的选择region
-(require 'mark-settings)
+;(require 'mark-settings)
 
 ;; `mode-line'显示格式
-(require 'mode-line-settings)
+(require 'init-settings-mode-line)
 
 ;; ffap,打开当前point的文件
-(require 'ffap-settings)
+(require 'init-settings-ffap)
 
 ;; 各种语言开发方面的设置
 (require 'dev-settings)
-
-;; 不要menu-bar和tool-bar
-;; (unless window-system
-;;   (menu-bar-mode -1))
-(menu-bar-mode -1)
-;; GUI下显示toolbar的话select-buffer会出问题
-(if (fboundp 'tool-bar-mode)
-    (tool-bar-mode -1))
-
-;; 打开压缩文件时自动解压缩
-;; 必须放在session前面
-(auto-compression-mode 1)
 
 ;; 所有关于buffer方面的配置
 (require 'all-buffer-settings)

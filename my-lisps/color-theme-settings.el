@@ -24,7 +24,7 @@
 (defun color-theme-settings ()
   "Settings for `color-theme'."
 
-  (require 'util)
+  (require 'init-utils)
 
   (apply-define-key
    color-theme-mode-map

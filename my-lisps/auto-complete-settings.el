@@ -4,7 +4,7 @@
 
 (require 'auto-complete-config)
 (require 'auto-complete+)
-(require 'util)
+(require 'init-utils)
 
 ;; After do this, isearch any string, M-: (match-data) always
 ;; return the list whose elements is integer

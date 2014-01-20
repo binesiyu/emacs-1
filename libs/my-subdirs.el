@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-09-05 17:05:25 Sunday by taoshanwen>
+;; Time-stamp: <2014-01-20 13:38:03 Monday by yubin>
 
 (defun my-add-subdirs-to-load-path (dir)
   "把DIR的所有子目录都加到`load-path'里面"
@@ -52,3 +52,5 @@ or `CVS', and any subdirectory that contains a file named `.nosearch'."
     (if (equal window-system 'w32)
         (setq load-path (append (nreverse dirs) load-path))
       (normal-top-level-add-to-load-path (cdr (nreverse dirs))))))
+
+(provide 'my-subdirs)

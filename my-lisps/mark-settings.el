@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2010-04-10 19:54:07 Saturday by ahei>
 
-(require 'util)
+(require 'init-utils)
 
 (transient-mark-mode 1)
 

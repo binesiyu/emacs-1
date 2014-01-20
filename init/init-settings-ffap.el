@@ -28,4 +28,4 @@
 (eval-after-load "ffap"
   `(ffap-settings))
 
-(provide 'ffap-settings)
+(provide 'init-settings-ffap)

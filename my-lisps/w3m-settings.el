@@ -5,7 +5,7 @@
 (autoload 'w3m-which-command "w3m-util")
 
 (when (w3m-which-command "w3m")
-  (require 'util)
+  (require 'init-utils)
   (require 'w3m)
 
   (eal-define-keys-commonly

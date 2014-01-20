@@ -12,7 +12,7 @@
 (require 'base-face-settings)
 
 ;; mode-line颜色设置
-(require 'mode-line-face-settings)
+(require 'face-mode-line)
 
 ;; `which-func'颜色设置
 (require 'which-func-face-settings)

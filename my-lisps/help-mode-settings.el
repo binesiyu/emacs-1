@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2012-01-01 14:34:22 Sunday by taoshanwen>
 
-(require 'util)
+(require 'init-utils)
 
 (define-key global-map (kbd "C-x H") 'goto-help-buffer)
 
