@@ -31,22 +31,8 @@
 ;; 编码设置
 (require 'init-settings-coding)
 
-;; CUA的矩阵区域操作特别方便
-;(require 'cua-settings)
-
-;; 矩形区域操作
-;(require 'rect-mark-settings)
-
-;; 鼠标配置
-;(require 'mouse-settings)
-
-;; 关于mark的一些设置，使你非常方便的选择region
-;(require 'mark-settings)
-
-;; `mode-line'显示格式
-(require 'init-settings-mode-line)
-
 (require 'init-files)
+
 ;; 各种语言开发方面的设置
 (require 'dev-settings)
 

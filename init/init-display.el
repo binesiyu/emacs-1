@@ -53,7 +53,8 @@
 ;; 启动Emacs的时候最大化Emacs
 (require 'maxframe-settings)
 
-
+;; `mode-line'显示格式
+(require 'init-settings-mode-line)
 
 (provide 'init-display)
 ;;; init-display.el ends here
