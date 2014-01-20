@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2010-04-20 00:00:51 Tuesday by ahei>
 
-(require 'face-mode-line)
+(require 'mode-line-face-settings)
 
 (am-def-active-fun linum-mode linum-mode-active)
 
