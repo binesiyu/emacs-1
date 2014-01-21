@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-04-05 19:44:16 Monday by ahei>
+;; Time-stamp: <2014-01-21 15:14:31 Tuesday by yubin>
 
 (defun isearch-settings ()
   "settings for `isearch'."
@@ -63,7 +63,7 @@
 
   (define-key-list
     isearch-mode-map
-    `(("M-i" isearch-query-replace-current-sb)
+    `(("M-i" isearch-query-replace-current)
       ("M-k" isearch-clean)
       ("M-g" isearch-cancel)
       ("M-u" isearch-toggle-word)

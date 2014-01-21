@@ -1,14 +1,12 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-01-01 19:30:32 Sunday by taoshanwen>
+;; Time-stamp: <2014-01-21 13:52:36 Tuesday by yubin>
 
-(unless is-after-emacs-23
-  (require 'linum "linum-for-22"))
 
 (global-set-key (kbd "C-x N") 'linum-mode)
 
 ;; http://emacser.com/linum-plus.htm
-(require 'linum+)
+(require 'linum)
 
 (am-add-hooks
  `(find-file-hook help-mode-hook Man-mode-hook log-view-mode-hook chart-mode-hook

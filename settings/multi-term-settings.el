@@ -4,9 +4,6 @@
 
 (require 'multi-term)
 
-(when use-cua
-  (cua-selection-mode 1))
-
 (define-key global-map (kbd "C-x e") 'multi-term)
 
 (defun term-send-kill-whole-line ()

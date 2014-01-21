@@ -1,9 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2013-12-21 14:06:57 Saturday by yubin>
-
-(if is-before-emacs-21
-    (require 'ido "ido-for-21"))
+;; Time-stamp: <2014-01-21 12:57:32 Tuesday by yubin>
 
 (ido-mode 1)
 

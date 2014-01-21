@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2014-01-20 13:32:47 Monday by yubin>
+;; Time-stamp: <2014-01-21 16:17:48 Tuesday by yubin>
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/init"))
@@ -83,9 +83,6 @@
 ;; 所有关于查看帮助方面的配置
 (require 'all-help-settings)
 
-;; 定义一些emacs 21没有的函数
-(if is-before-emacs-21 (require 'for-emacs-21))
-
 ;; 以目录形式显示linkd文档
 (require 'linkd-settings)
 
@@ -99,16 +96,16 @@
 
 (require 'view-mode-settings)
 
-;(eal-define-keys-commonly
-; global-map
-; `(("M-r"     query-replace-sb)
-;   ("M-%"     query-replace-sb)
-;   ("ESC M-%" query-replace-regexp-sb)
-;   ("ESC M-r" query-replace-regexp-sb)
-;   ("C-x M-r" query-replace-regexp-sb)
-;   ("M-z"     zap-to-char-sb)
-;   ("C-j"     goto-line)
-;   ("C-x C-s" save-buffer-sb)))
+(eal-define-keys-commonly
+ global-map
+ `(("M-r"     query-replace)
+   ("M-%"     query-replace)
+   ("ESC M-%" query-replace-regexp)
+   ("ESC M-r" query-replace-regexp)
+   ("C-x M-r" query-replace-regexp)
+   ("M-z"     zap-to-char)
+   ("C-j"     goto-line)
+   ("C-x C-s" save-buffer)))
 
 (am-add-hooks
  `(find-file-hook)
@@ -130,7 +127,7 @@
 (define-key-list
   global-map
   `(("C-x M-k" Info-goto-emacs-key-command-node)
-    ("C-x ESC ESC" repeat-complex-command-sb)))
+    ("C-x ESC ESC" repeat-complex-command)))
 
 
 ;; notification tool

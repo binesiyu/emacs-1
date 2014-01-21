@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-04-11 19:44:51 Sunday by ahei>
+;; Time-stamp: <2014-01-21 12:56:53 Tuesday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -24,7 +24,6 @@
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 
 ;; ibuffer
-(if is-before-emacs-21 (require 'ibuffer-for-21))
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; 非常方便的切换buffer和打开文件
@@ -48,7 +47,7 @@
  global-map
  `(("C-x u"   revert-buffer-no-confirm)
    ("C-x M-K" revert-buffer-with-gbk)
-   ("C-x U"   revert-buffer-with-coding-system-no-confirm-sb)))
+   ("C-x U"   revert-buffer-with-coding-system-no-confirm)))
 
 (defun count-brf-lines (&optional is-fun)
   "显示当前buffer或region或函数的行数和字符数"

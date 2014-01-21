@@ -16,8 +16,8 @@
    ("L" count-brf-lines)
    ("t" sb-toggle-keep-buffer)
    ("]" goto-paren)
-   ("c" go-to-char-forward-sb)
-   ("C" go-to-char-backward-sb)))
+   ("c" go-to-char-forward)
+   ("C" go-to-char-backward)))
 
 (defun emaci-settings ()
   "settings for `emaci'."

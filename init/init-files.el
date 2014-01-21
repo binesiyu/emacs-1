@@ -106,6 +106,42 @@ If FULL is t, copy full file name."
 
 (define-key global-map (kbd "C-x M-D") 'dos2unix)
 
+;;;###autoload
+(defun execute-command-on-current-dir (command)
+  "对当前目录执行命令COMMAND."
+  (interactive
+   (list (let* ((input ""))
+           (while (string= input "")
+             (setq input (read-string "命令: ")))
+           input)))
+  (let* ((file (buffer-file-name)))
+    (execute-command-on-file default-directory command)
+    (if file
+        (revert-buffer-no-confirm))))
 
+;;;###autoload
+(defmacro def-execute-command-on-file-command (command)
+  "Make definition of command which execute command on file."
+  `(defun ,(intern (subst-char-in-string ?\ ?- command)) (file)
+     ,(concat "Run command `" command "' on file FILE.")
+     (interactive (list (read-file-name (concat "File to " ,command ": "))))
+     (execute-command-on-file file ,command)))
+
+;;;###autoload
+(defmacro def-execute-command-on-current-file-command (command)
+  "Make definition of command which execute command on current file."
+  `(defun ,(am-intern (subst-char-in-string ?\ ?- command) "-current-file") ()
+     ,(concat "Execute command `" command "' on current file.")
+     (interactive)
+     (execute-command-on-current-file ,command)))
+
+;;;###autoload
+(defmacro def-execute-command-on-current-dir-command (command)
+  "Make definition of command which execute command on current directory."
+  `(defun ,(am-intern (subst-char-in-string ?\ ?- command) "-current-dir") ()
+     ,(concat "Execute command `" command "' on current directory.")
+     (interactive)
+     (execute-command-on-current-dir ,command)))
+ 
 (provide 'init-files)
 ;;; init-files.el ends here

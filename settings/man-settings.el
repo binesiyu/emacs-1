@@ -25,7 +25,7 @@
    ("m"     back-to-indentation)
    ("M-j"   Man-goto-section)
    ("."     set-mark-command)
-   ("c"     go-to-char-forward-sb)
+   ("c"     go-to-char-forward)
    ("g"     emaci-g)
    ("v"     set-mark-command)
    ("'"     switch-to-other-buffer)))

@@ -141,7 +141,7 @@
    ("C-c n"   org-forward-same-level)
    ("C-c p"   org-backward-same-level)
    ("C-c M-l" org-shiftright)
-   ("C-c ,"   org-priority-sb)))
+   ("C-c ,"   org-priority)))
 
 (eal-define-keys
  'org-agenda-mode-map
@@ -153,7 +153,7 @@
 
 (defun org-colview-settings ()
   "Settings for `org-colview'."
-  (org-defkey org-columns-map "e" 'org-columns-edit-value-sb)
+  (org-defkey org-columns-map "e" 'org-columns-edit-value)
   (org-defkey org-columns-map "h" 'backward-char)
   (org-defkey org-columns-map "l" 'forward-char)
   (org-defkey org-columns-map "j" 'next-line)

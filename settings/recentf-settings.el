@@ -1,10 +1,10 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-09-12 11:06:57 Sunday by taoshanwen>
+;; Time-stamp: <2014-01-21 13:59:34 Tuesday by yubin>
 
 (recentf-mode 1)
 
-(global-set-key (kbd "C-x C-r") 'recentf-open-files-complete-sb)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files-complete)
 
 (defun recentf-open-files-complete ()
   (interactive)
