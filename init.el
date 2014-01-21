@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2014-01-21 16:17:48 Tuesday by yubin>
+;; Time-stamp: <2014-01-21 16:22:45 Tuesday by yubin>
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/init"))
@@ -96,17 +96,6 @@
 
 (require 'view-mode-settings)
 
-(eal-define-keys-commonly
- global-map
- `(("M-r"     query-replace)
-   ("M-%"     query-replace)
-   ("ESC M-%" query-replace-regexp)
-   ("ESC M-r" query-replace-regexp)
-   ("C-x M-r" query-replace-regexp)
-   ("M-z"     zap-to-char)
-   ("C-j"     goto-line)
-   ("C-x C-s" save-buffer)))
-
 (am-add-hooks
  `(find-file-hook)
  (lambda ()
@@ -123,12 +112,6 @@
 
 ;; 查询天气预报
 (require 'weather-settings)
-
-(define-key-list
-  global-map
-  `(("C-x M-k" Info-goto-emacs-key-command-node)
-    ("C-x ESC ESC" repeat-complex-command)))
-
 
 ;; notification tool
 (require 'todochiku-settings)
@@ -191,10 +174,6 @@ If the file does not exist, an error is thrown.")
   (interactive)
   (open-file-with-app buffer-file-name))
 
-(eal-define-keys-commonly
- global-map
- `(("C-x M-O" open-current-file-with-app)))
-
 ;; 一些有趣的东西
 (require 'funny)
 
@@ -227,6 +206,8 @@ If the file does not exist, an error is thrown.")
 ;; session,可以保存很多东西，例如输入历史(像搜索、打开文件等的输入)、
 ;; register的内容、buffer的local variables以及kill-ring和最近修改的文件列表等。非常有用。
 (require 'session-settings)
+
+(require 'init-keybind)
 
 ;; 王纯业的desktop, 比desktop快多了
 (require 'wcy-desktop-settings)

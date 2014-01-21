@@ -21,11 +21,6 @@
 
 (require 'hide-region)
 
-(eal-define-keys-commonly
- global-map
- `(("C-x M-r" hide-region-hide)
-   ("C-x M-R" hide-region-unhide)))
-
 (defun hide-region-settings ()
   "Settings for `hide-region'."
   (setq hide-region-before-string "[======================该区域已")

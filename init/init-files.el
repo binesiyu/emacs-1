@@ -82,17 +82,6 @@ If FULL is t, copy full file name."
   "Goto my home directory."
   (interactive)
   (dired "~"))
-(define-key-list
-  global-map
-  `(("C-x G l" goto-my-emacs-lisps-dir)
-    ("C-x G m" goto-my-emacs-my-lisps-dir)
-    ("C-x G e" goto-my-emacs-dir)
-    ("C-x M-H" goto-my-home-dir)))
-
-(eal-define-keys-commonly
- global-map
- `(("C-x M-c" describe-char)
-   ("C-x M-C" set-buffer-file-coding-system)))
  
  (defun dos2unix ()
   "dos2unix on current buffer."
@@ -103,8 +92,6 @@ If FULL is t, copy full file name."
   "unix2dos on current buffer."
   (interactive)
   (set-buffer-file-coding-system 'dos))
-
-(define-key global-map (kbd "C-x M-D") 'dos2unix)
 
 ;;;###autoload
 (defun execute-command-on-current-dir (command)

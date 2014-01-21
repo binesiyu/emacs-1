@@ -9,16 +9,6 @@
 ;; `(("M-s" emaci-mode-on)
 ;;   ("M-S" emaci-mode-off)))
 
-(eal-define-keys
- 'emaci-mode-map
- `(("/" describe-symbol-at-point)
-   ("'" switch-to-other-buffer)
-   ("L" count-brf-lines)
-   ("t" sb-toggle-keep-buffer)
-   ("]" goto-paren)
-   ("c" go-to-char-forward)
-   ("C" go-to-char-backward)))
-
 (defun emaci-settings ()
   "settings for `emaci'."
   (setq emaci-brief-key-defs
@@ -41,10 +31,7 @@
     (if emaci-mode
         (emaci-mode-off)
       (emaci-mode-on)))
-  
-  (eal-define-keys-commonly
-   global-map
-   `(("C-x q" toggole-emaci-mode))))
+  )
 
 (eval-after-load "emaci"
   `(emaci-settings))

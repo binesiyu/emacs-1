@@ -26,15 +26,6 @@
         (yas/load-snippet-buffer))))
   (add-hook 'after-save-hook 'yasnippet-reload-after-save))
 
-(eal-define-keys
- 'yas/keymap
- `(("M-j"     yas/next-field-or-maybe-expand)
-   ("M-k"     yas/prev-field)))
-
-;;(eal-define-keys
-;; 'yas/minor-mode-map
-;; `(("C-c C-f" yas/find-snippets)))
-
 (eval-after-load "yasnippet"
   `(yasnippet-settings))
 

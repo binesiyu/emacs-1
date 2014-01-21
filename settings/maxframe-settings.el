@@ -86,18 +86,6 @@ system."
       (maximize-frame))
     (setq frame-state (not state))))
 
-(define-prefix-command 'm-spc-map)
-(global-set-key (kbd "M-SPC") 'm-spc-map)
-
-(let ((map global-map)
-      (key-pairs
-       `(("M-SPC x"   toggle-maximize-frame)
-         ("M-SPC M-x" toggle-maximize-frame)
-         ("M-SPC n"   minimize-frame)
-         ("M-SPC c"   delete-frame)
-         ("M-SPC M-c" delete-frame))))
-  (apply-define-key map key-pairs))
-
 ;; 启动的时候不能直接调用`maximize-frame', 否则如果去掉工具栏的话,
 ;; 底下会有一条缝隙, 没有完全最大化
 (add-hook 'window-setup-hook 'maximize-frame t)

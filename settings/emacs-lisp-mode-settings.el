@@ -2,11 +2,6 @@
 
 ;; Time-stamp: <2010-08-07 11:10:51 Saturday by taoshanwen>
 
-(eal-define-keys
- `emacs-lisp-mode-map
- `(("C-c M-a" beginning-of-defun)
-   ("C-c M-e" end-of-defun)))
-
 (defun emacs-lisp-mode-settings ()
   "Settings for `emacs-lisp-mode'."
 

@@ -2,30 +2,6 @@
 
 ;; Time-stamp: <2010-09-04 16:52:45 Saturday by taoshanwen>
 
-(eal-define-keys
- 'view-mode-map
- `(("U"           View-scroll-page-backward)
-   ("/"           describe-symbol-at-point)
-   ("\C-j"        goto-line)
-   ("'"           switch-to-other-buffer)
-   ("m"           back-to-indentation)
-   ("p"           previous-line-or-backward-button)
-   ("Q"           delete-current-window)
-   ("L"           count-brf-lines)
-   ("1"           delete-other-windows)
-   ("t"           sb-toggle-keep-buffer)
-   ("<backspace>" c-electric-backspace)
-   ("u"           View-scroll-half-page-backward)
-   ("S-SPC"       View-scroll-half-page-backward)
-   ("SPC"         View-scroll-half-page-forward)
-   ("w"           scroll-down)
-   ("d"           scroll-up)
-   (","           find-symbol-go-back)
-   ("1"           delete-other-windows)
-   ("2"           split-window-vertically)
-   ("3"           split-window-horizontally)
-   ("B"           eval-buffer)))
-
 (defun view-mode-settings ()
   "settings for `view-mode'."
   (defface view-mode-mode-line-face

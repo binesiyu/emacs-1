@@ -17,9 +17,6 @@
 ;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-(define-key global-map (kbd "C-x M-n") 'next-buffer)
-(define-key global-map (kbd "C-x M-p") 'previous-buffer)
-
 ;; 按下C-x k立即关闭掉当前的buffer
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 
@@ -43,11 +40,6 @@
     (let ((emaci emaci-mode))
       (revert-buffer buffer-file-name t)
       (emaci-mode (if emaci 1 -1)))))
-(eal-define-keys-commonly
- global-map
- `(("C-x u"   revert-buffer-no-confirm)
-   ("C-x M-K" revert-buffer-with-gbk)
-   ("C-x U"   revert-buffer-with-coding-system-no-confirm)))
 
 (defun count-brf-lines (&optional is-fun)
   "显示当前buffer或region或函数的行数和字符数"
@@ -76,10 +68,6 @@
               (setq max (point-max))))
           (message "narrow下buffer内共有%d行, %d个字符, 非narrow下buffer内共有%d行, %d个字符"
                    (count-lines nmin nmax) (- nmax nmin) (count-lines min max) (- max min)))))))
-(eal-define-keys-commonly
- global-map
- `(("C-x l" count-brf-lines)
-   ("C-x L" (lambda () (interactive) (count-brf-lines t)))))
  
  (defun switch-to-scratch ()
   "切换到*scratch*"

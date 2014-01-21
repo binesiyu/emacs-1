@@ -53,33 +53,14 @@ DIR has to be 1 or -1."
               (setq this-command 'highlight-symbol-jump)))
         (error "No symbol at point"))))
   
-  ;; I bind "C-x w" to `copy-sexp'
-  (eal-define-keys
-   'hi-lock-map
-   `(("C-x w" nil)))
-
   (defun highlight-symbol-settings-4-emaci ()
     "`highlight-symbol' settings for `emaci'."
     (emaci-add-key-definition "n" 'highlight-symbol-next)
     (emaci-add-key-definition "p" 'highlight-symbol-prev))
     
-  (eal-define-keys
-   'emaci-mode-map
-   `(("p" emaci-p)))
 
   (eval-after-load "emaci"
-    `(highlight-symbol-settings-4-emaci))
-  
-  (eal-define-keys
-   `(emacs-lisp-mode-map lisp-interaction-mode-map java-mode-map
-                         c-mode-base-map text-mode-map ruby-mode-map html-mode-map)
-   `(("C-c M-H" highlight-symbol-at-point)
-     ("C-c M-R" highlight-symbol-remove-all)
-     ("C-c M-N" highlight-symbol-next)
-     ("C-c M-P" highlight-symbol-prev)
-     ("C-c r"   highlight-symbol-query-replace)
-     ("C-c M-n" highlight-symbol-next-in-defun)
-     ("C-c M-p" highlight-symbol-prev-in-defun))))
+    `(highlight-symbol-settings-4-emaci)))
 
 (eval-after-load "highlight-symbol"
   '(highlight-symbol-settings))

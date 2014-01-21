@@ -46,11 +46,6 @@
 ;; hs-minor-mode,折叠代码
 (require 'hs-minor-mode-settings)
 
-;; 输入左大花扩号自动补齐右大花括号
-(eal-define-keys
- `(c-mode-base-map awk-mode-map)
- `(("{" skeleton-c-mode-left-brace)))
-
 ;; 动态检查语法错误
 (require 'flymake-settings)
 
@@ -187,18 +182,6 @@
 
 ;; 放在kde-emacs后面
 ;(require 'compile-settings)
-
-;; 回车后indent
-(eal-define-keys
- `(lisp-mode-map emacs-lisp-mode-map lisp-interaction-mode-map sh-mode-map
-                 ,(if (not is-before-emacs-21) 'awk-mode-map) 
-                 ;;java-mode-map
-                 ;;ruby-mode-map 
-                 c-mode-base-map tcl-mode-map org-mode-map
-                 python-mode-map 
-                 ;;perl-mode-map
-                 )
- `(("RET" newline-and-indent)))
 
 (defun copy-current-fun-name ()
   "Copy current function name."

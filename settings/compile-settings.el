@@ -7,30 +7,7 @@
 
 (defalias 'cpl 'compile)
 
-(eal-define-keys
- (append makefile-mode-map-list
-         '(c-mode-base-map svn-status-mode-map sh-mode-map
-                           compilation-mode-map ruby-mode-map
-                           python-mode-map py-mode-map))
- `(("C-c C-m"  make)
-   ("C-c m"    make-check)
-   ("C-c M"    make-clean)
-   ("C-c c"    compile-buffer)
-   ("C-c r"    run-program)
-   ("C-c C"    smart-compile)))
-
-(eal-define-keys
- 'java-mode-map
- `(("C-c C-m" ant)
-   ("C-c M"	  ant-clean)
-   ("C-c m"	  ant-test)))
-
 (require 'compile-misc)
-
-(eal-define-keys-commonly
- global-map
- `(("M-n" next-error)
-   ("M-p" previous-error)))
 
 (defun compile-settings ()
   "Settings for `compile'."

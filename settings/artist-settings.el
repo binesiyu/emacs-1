@@ -21,14 +21,6 @@
 
 (global-set-kbd "C-x M-A" 'artist-mode)
 
-(eal-define-keys
- 'artist-mode-map
- `(("C-c l"   artist-select-op-line)
-   ("C-c r"   artist-select-op-rectangle)
-   ("C-c M-w" artist-select-op-copy-rectangle)
-   ("C-c M-k" artist-select-op-cut-rectangle)
-   ("C-c M-p" artist-select-op-paste)))
-
 (defun artist-settings ()
   "Settings for `artist-mode'."
   (defvar hl-line-mode-active          nil "`hl-line-mode' active or not.")

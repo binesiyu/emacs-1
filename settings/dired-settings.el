@@ -19,10 +19,6 @@
 ;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-(eal-define-keys-commonly
- global-map
- `(("C-x d" dired-jump)))
-
 (add-hook 'dired-after-readin-hook 'his-dired-sort)
 (add-hook 'dired-lood-hook 'his-dired-sort)
 
@@ -195,66 +191,7 @@ which is options for `diff'."
 
   (defun dired-keys ()
     "dired-mode中的快捷键定义"
-    (define-prefix-command 'dired-slash-map)
-    (eal-define-keys-commonly
-     dired-mode-map
-     `(("C-h"         dired-up-directory-same-buffer)
-       ("<backspace>" dired-up-directory-same-buffer)
-       ("'"           switch-to-other-buffer)
-       ("/"           dired-slash-map)
-       ("/m"          ywb-dired-filter-regexp)
-       ("/."          ywb-dired-filter-extension)
-       ("C-q"         ywb-dired-quickview)
-       ("r"           wdired-change-to-wdired-mode)
-       ("C-s"         dired-lis-isearch-forward-always?)
-       ("C-r"         dired-lis-isearch-backward-always?)
-       ("ESC C-s"     dired-lis-isearch-forward-regexp-always?)
-       ("ESC C-r"     dired-lis-isearch-backward-regexp-always?)
-       ;; 让dired只使用一个buffer
-       ("RET"         dired-lis-find-file-reuse-dir-buffer)
-       ("<return>"    dired-lis-find-file-reuse-dir-buffer)
-       ("M"           wuxch-mark-all-files-directories)
-       ("g"           revert-buffer)
-       ("M-o"         dired-omit-mode)
-       ("M-Y"         dired-redo)
-       ("C-k"         dired-do-delete)
-       ("M-s"         dired-lis-off)
-       ("q"           dired-lis-on)
-       ("M"           dired-unmark)
-
-       ("1"           delete-other-windows)
-       ("2"           split-window-vertically)
-       ("3"           split-window-horizontally)
-       ("o"           other-window)
-
-       ("j"           wuxch-dired-next-line)
-       ("k"           wuxch-dired-previous-line)
-       ("SPC"         dired-scroll-half-page-forward)
-       ("u"           dired-scroll-half-page-backward)
-       ("d"           dired-scroll-up)
-       ("w"           dired-scroll-down)
-       ("M->"         wuxch-dired-goto-last-line)
-       ("M-<"         wuxch-dired-goto-first-line)
-
-       ("M-w"         wuxch-dired-copy)
-       ("C-y"         wuxch-dired-paste)
-       ("M-k"         wuxch-dired-cut)
-
-       ("c"           dired-do-copy)
-       ("E"           dired-ediff)
-       ("t"           sb-toggle-keep-buffer)
-       ("M-m"         dired-unmark-backward)
-       ("C-c M-m"     dired-create-directory)
-       
-       ("C-c C-m"     make)
-       ("C-c m"       make-check)
-       ("C-c M"       make-clean)
-       ("C-c c"       compile-buffer)
-       ("C-c r"       run-program)
-       ("C-c C"       smart-compile)
-       ("C-c g"       gdb)
-       ("C-c b"       gud-break)
-       ("C-c B"       gud-remove))))
+    (define-prefix-command 'dired-slash-map))
 
   (defun dired-mode-hook-settings ()
     "Settings for `dired-mode-hook'."

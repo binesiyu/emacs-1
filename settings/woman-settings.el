@@ -17,12 +17,6 @@
         (or (woman-parse-colon-path (getenv "MANPATH"))
             '("/usr/man" "/usr/share/man" "/usr/local/man"))))
 
-(eal-define-keys
- 'woman-mode-map
- `(("t"     sb-toggle-keep-buffer)
-   ("w"     scroll-down)
-   ("v"     set-mark-command)))
-
 (eval-after-load "woman"
   '(woman-settings))
 

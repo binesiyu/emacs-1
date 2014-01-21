@@ -23,13 +23,6 @@
 ;; snavigator
 (require 'sn)
 
-(eal-define-keys
- `(c-mode-base-map)
- `(("C-h"     c-electric-backspace)
-   ("C-c M-a" beginning-of-defun)
-   ("C-c M-e" end-of-defun)
-   ("C-c M-F" copy-current-fun-name)))
-
 (defun cc-mode-settings ()
   "Settings for `cc-mode'."
   (defun c-mode-common-hook-settings ()

@@ -2,32 +2,6 @@
 
 ;; Time-stamp: <2010-12-01 19:27:22 Wednesday by taoshanwen>
 
-(unless is-before-emacs-21
-  (eal-define-keys-commonly
-   global-map
-   `(("C-x F"   find-grep-in-current-dir)
-     ("C-x f"   find-grep-in-dir)
-     ("C-x M-f" find-grep-current-word-in-current-dir)
-     ("C-x M-F" find-grep-current-word)))
-  
-  (eal-define-keys
-   'grep-mode-map
-   `(("q"     bury-buffer)
-     ("Q"     kill-this-buffer)
-     ("1"     delete-other-windows)
-     ("<"     beginning-of-buffer)
-     (">"     end-of-buffer)
-     ("'"     switch-to-other-buffer)
-     ("u"     scroll-down)
-     ("d"     scroll-up)
-     ("S-SPC" View-scroll-half-page-backward)
-     ("SPC"   View-scroll-half-page-forward)
-     ("/"     describe-symbol-at-point)
-     ("t"     sb-toggle-keep-buffer)
-     ("N"     select-buffer-forward)
-     ("P"     select-buffer-backward)
-     ("L"     count-brf-lines))))
-
 (autoload 'grep-apply-setting "grep"
   "Set SYMBOL to VALUE, and update `grep-host-defaults-alist'.
 SYMBOL should be one of `grep-command', `grep-template',

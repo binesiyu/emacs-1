@@ -48,9 +48,4 @@
     ((or (looking-at "[]\")}]") (looking-back "[]\")}][ \t]*")) (if (< (point) (point-max)) (forward-char)) (backward-sexp))
    (t (message "找不到匹配的括号"))))
 
-(eal-define-keys-commonly
- global-map
- `(("C-M-]" ywb-indent-accoding-to-paren)
-   ("\C-]" goto-paren)))
-
 (provide 'all-paren-settings)

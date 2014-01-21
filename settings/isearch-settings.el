@@ -82,10 +82,6 @@
              (if isearch-regexp 'isearch-backward-regexp 'isearch-backward))))
       (call-interactively isearch-command))))
 
-(define-key-list
-    global-map
-    `(("C-x M-s" isearch-forward-cur-word)))
-
 (eval-after-load "isearch"
   '(isearch-settings))
 

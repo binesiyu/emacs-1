@@ -67,15 +67,6 @@ and `transient-mark-mode'." t)
     (kill-whole-buffer    'kill-region   'mark-whole-buffer "Kill whole buffer.")
     (indent-whole-buffer  'indent-region 'mark-whole-buffer "Indent whole buffer.")))
 
-(eal-define-keys
- (append
-  makefile-mode-map-list
-  `(c-mode-base-map emacs-lisp-mode-map lisp-interaction-mode-map
-                    conf-javaprop-mode-map html-mode-map tcl-mode-map
-                    autoconf-mode-map perl-mode-map nxml-mode-map
-                    python-mode-map graphviz-dot-mode-map))
- `(("C-c C-c" comment)))
-
 ;;;###autoload
 (defmacro def-redo-command (fun-name redo undo)
   "Make redo command."
@@ -87,58 +78,6 @@ and `transient-mark-mode'." t)
      (call-interactively ,undo)
      (setq this-command ,redo)))
 (def-redo-command redo 'redo 'undo)
-
-(eal-define-keys-commonly
- global-map
- `(("M-k" kill-whole-paragraph)
-   ("M-C-k" kill-paragraph)
-   ("M-C" copy-whole-paragraph)
-   ("C-x c" copy-whole-buffer)
-   ("C-x C" kill-whole-buffer)
-   ("M-W" which-copy)
-   ("M-w" smart-copy)
-   ("C-x M-w" insert-cur-line)
-   ("C-x M-W" insert-cur-sexp)
-   ("C-M-w" copy-sentence)
-   ;; 删除整行
-   ("M-K" kill-line)
-   ("C-k" smart-kill)
-   ("C-\\" delete-indentation)
-   ("C-x M-M" mark-invisible-region)
-   ("M-U" del-to-begin)
-   ("C-^" case-trans)
-   ("C-6" case-trans)
-   ("C-w" backward-kill-word-or-kill-region)
-   ("C-x S" mark-whole-sexp)
-   ("C-x W" kill-whole-sexp)
-   ("C-x w" copy-sexp)
-   ("M-D" my-kill-word)
-   ("C-x TAB" indent-whole-buffer)
-   ("C-h" c-electric-backspace-kill)
-   ,(if window-system '("C-z" undo))
-   ("M-Y" redo)
-   ("M-m" beginning-of-line-text)
-   ("C-M-\\" smart-indent)
-   ("M-q" fill-paragraph-justify)
-   ("<escape> SPC" just-one-space)))
-
-(eal-define-keys
- 'c-mode-base-map
-  `(("C-c f" copy-function)
-    ("C-c F" kill-function)
-    ("C-c C" comment-function)
-    ("C-M-h" mark-function)))
-
-(eal-define-keys
- `(emacs-lisp-mode-map lisp-interaction-mode-map)
- `(("C-M-h" mark-function)
-   ("C-c D"  edebug-defun)
-   ("C-c C-d" eval-defun)
-   ("C-c B"  eval-buffer)
-   ("C-c f" copy-function)
-   ("C-c F" kill-function)
-   ("C-c C-q" indent-function)
-   ("C-c C" comment-function)))
 
 ;; 这个功能就是根据光标的所在位置，智能的选择一块区域，也就
 ;; 是设置成为当前的point和mark。这样就可以方便的拷贝或者剪切，或者交换他们的位
@@ -168,6 +107,5 @@ and `transient-mark-mode'." t)
         (goto-char (mark-marker))
         (sit-for 0 500 nil))
       (goto-char goto-point))))
-(define-key global-map (kbd "M-C-l") 'wcy-mark-some-thing-at-point)
 
 (provide 'edit-settings)
