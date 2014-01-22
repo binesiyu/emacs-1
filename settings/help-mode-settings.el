@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2012-01-01 14:34:22 Sunday by taoshanwen>
 
-(require 'init-utils)
+
 
 (defun help-mode-settings ()
   "settings of `help-mode'."

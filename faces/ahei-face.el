@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2010-09-18 22:31:55 Saturday by taoshanwen>
 
-(require 'init-utils)
+
 
 ;; 我自定义的一些face
 (defface white-face

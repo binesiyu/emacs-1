@@ -41,7 +41,6 @@
 (unless is-after-emacs-23
   (partial-completion-mode 1))
   
-(require 'apropos-settings)
 (require 'completion-list-mode-settings)
  
  ;; 简写模式

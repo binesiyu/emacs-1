@@ -1,7 +1,7 @@
 ;; -*- Emacs-Lisp -*-
 ;; Time-stamp: <2013-12-21 17:38:58 Saturday by yubin>
 
-(require 'init-utils)
+
 (require 'emaci)
 
 ;;(apply-define-key

@@ -19,7 +19,7 @@
 
 (defun ido-face-settings ()
   "Face settings for `ido'."
-  (require 'init-utils)
+  
 
   (if is-before-emacs-21
       (progn

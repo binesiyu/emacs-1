@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2011-03-20 23:26:43 Sunday by taoshanwen>
 
-(require 'init-utils)
+
 
 (eal-define-keys
  'c-mode-base-map

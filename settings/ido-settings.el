@@ -24,7 +24,7 @@
        (setq ido-exit (quote ,(intern command)))
        (exit-minibuffer)))
 
-  (require 'init-utils)
+  
   
   (apply-args-list-to-fun
    'def-ido-enter-command

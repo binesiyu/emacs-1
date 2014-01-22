@@ -40,7 +40,7 @@
 ;; 使用这个扩展时如果遇到问题, M-x sb-toggle-keep-buffer(C-x t)暂时关掉
 ;; 该扩展, 然后再M-x sb-toggle-keep-buffer(C-x t)打开该扩展
 
-(require 'init-utils)
+
 (require 'ahei-face)
 (require 'diff-mode)
 

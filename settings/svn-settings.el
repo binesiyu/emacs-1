@@ -5,7 +5,7 @@
 (require 'psvn)
 (require 'svn)
 (require 'svn-misc)
-(require 'init-utils)
+
 
 (eal-define-keys-commonly
  global-map

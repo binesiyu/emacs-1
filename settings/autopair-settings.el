@@ -3,7 +3,7 @@
 ;; Time-stamp: <2011-06-06 17:52:54 Monday by taoshanwen>
 
 (require 'autopair)
-(require 'init-utils)
+
 
 (defun autopair-settings ()
   "settings for `autopair'."

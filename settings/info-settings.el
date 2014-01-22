@@ -2,7 +2,7 @@
 
 ;; Time-stamp: <2012-04-07 21:26:27 Saturday by taoshanwen>
 
-(require 'init-utils)
+
 
 (apply-args-list-to-fun
  'def-command-max-window
