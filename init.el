@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2014-01-22 10:21:20 Wednesday by yubin>
+;; Time-stamp: <2014-01-22 15:11:44 Wednesday by yubin>
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/init"))
@@ -135,7 +135,7 @@
 (require 'outline-settings)
 
 ;; org是一个非常强大的GTD工具
-;(require 'org-settings)
+(require 'init-org)
 
 
 

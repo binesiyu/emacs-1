@@ -33,92 +33,76 @@
 
 ;================global-map=================
 
-(eal-define-keys-commonly
- global-map
- `(("C-x M-E" toggle-debug-on-error)
-   ("C-x Q"   toggle-debug-on-quit)))
-
-(define-key-list
-  global-map
-  `(("C-x G l" goto-my-emacs-lisps-dir)
-    ("C-x G m" goto-my-emacs-my-lisps-dir)
-    ("C-x G e" goto-my-emacs-dir)
-    ("C-x M-H" goto-my-home-dir)))
+;;org
+(define-prefix-command 'm-spc-map)
+(global-set-key (kbd "M-SPC") 'm-spc-map)
 
 (eal-define-keys-commonly
  global-map
- `(("C-x M-c" describe-char)
-   ("C-x M-C" set-buffer-file-coding-system)))
+ `(
+   ("C-c l" org-store-link)
+   ("C-c c" org-capture)
+   ("C-c a" org-agenda)
+   ("C-c b" org-iswitchb)
+   ("C-x M-E" toggle-debug-on-error)
+   ("C-x Q"   toggle-debug-on-quit)
+   ;;goto
+   ("C-x G l" goto-my-emacs-lisps-dir)
+   ("C-x G m" goto-my-emacs-my-lisps-dir)
+   ("C-x G e" goto-my-emacs-dir)
+   ("C-x M-H" goto-my-home-dir)
+    
+   ("C-x M-c" describe-char)
+   ("C-x M-C" set-buffer-file-coding-system)
    
-(define-key global-map (kbd "C-x M-D") 'dos2unix)
-
-(eal-define-keys-commonly
- global-map
- `(("M-r"     query-replace)
+   ("C-x M-D" dos2unix)
+   
+   ("M-r"     query-replace)
    ("M-%"     query-replace)
    ("ESC M-%" query-replace-regexp)
    ("ESC M-r" query-replace-regexp)
    ("C-x M-r" query-replace-regexp)
    ("M-z"     zap-to-char)
    ("C-j"     goto-line)
-   ("C-x C-s" save-buffer)))
+   ("C-x C-s" save-buffer)
    
-(define-key-list
-  global-map
-  `(("C-x M-k" Info-goto-emacs-key-command-node)
-    ("C-x ESC ESC" repeat-complex-command)))
-
-(eal-define-keys-commonly
- global-map
- `(("C-x M-O" open-current-file-with-app)))
-
-;;align-setting 
-(eal-define-keys-commonly
- global-map
- `(("C-x a"   align)
-   ("C-x M-a" align-regexp)))
-
-;;buffer
-(define-key global-map (kbd "C-x M-n") 'next-buffer)
-(define-key global-map (kbd "C-x M-p") 'previous-buffer)
-
-(eal-define-keys-commonly
- global-map
- `(("C-x u"   revert-buffer-no-confirm)
+   ("C-x M-k" Info-goto-emacs-key-command-node)
+   ("C-x ESC ESC" repeat-complex-command)
+    
+   ("C-x M-O" open-current-file-with-app)
+    
+   ;;align-setting     
+   ("C-x a"   align)
+   ("C-x M-a" align-regexp)
+   
+   ;;buffer
+   ("C-x M-n" next-buffer)
+   ("C-x M-p" previous-buffer)
+   ;;revert
+   ("C-x u"   revert-buffer-no-confirm)
    ("C-x M-K" revert-buffer-with-gbk)
-   ("C-x U"   revert-buffer-with-coding-system-no-confirm)))
-
-(eal-define-keys-commonly
- global-map
- `(("C-x l" count-brf-lines)
-   ("C-x L" (lambda () (interactive) (count-brf-lines t)))))
-
- ;;paren-setting
-(eal-define-keys-commonly
- global-map
- `(("C-M-]" ywb-indent-accoding-to-paren)
-   ("\C-]" goto-paren)))
- 
-;;describe-find-symbol-setting
-(eal-define-keys-commonly
- global-map
- `(("C-x C-k" describe-key)
+   ("C-x U"   revert-buffer-with-coding-system-no-confirm)
+   
+   ("C-x l" count-brf-lines)
+   ("C-x L" (lambda () (interactive) (count-brf-lines t)))
+   
+    ;;paren-setting
+   ("C-M-]" ywb-indent-accoding-to-paren)
+   ("\C-]" goto-paren)
+   
+   ;;describe-find-symbol-setting 
+   ("C-x C-k" describe-key)
    ("C-x C-m" describe-mode)
    ("C-x / A" describe-face)
    ("C-x / a" apropos)
    ("C-x A"   apropos-command)
    ("C-x C-d" find-symbol)
    ("C-x K"   find-symbol-fun-on-key)
-   (,(if window-system "C-x C-/" "C-x C-_") describe-symbol)))
- 
- ;;dired-setting
-(eal-define-keys-commonly
- global-map
- `(("C-x d" dired-jump)))
-
-(eal-define-keys-commonly
- global-map
- `(("M-k" kill-whole-paragraph)
+   (,(if window-system "C-x C-/" "C-x C-_") describe-symbol)
+   ;;dired-setting 
+   ("C-x d" dired-jump)
+   ;;edit
+   ("M-k" kill-whole-paragraph)
    ("M-C-k" kill-paragraph)
    ("M-C" copy-whole-paragraph)
    ("C-x c" copy-whole-buffer)
@@ -143,30 +127,50 @@
    ("M-D" my-kill-word)
    ("C-x TAB" indent-whole-buffer)
    ("C-h" c-electric-backspace-kill)
-   ,(if window-system '("C-z" undo))
+   ("C-z" undo)
    ("M-Y" redo)
    ("M-m" beginning-of-line-text)
    ("C-M-\\" smart-indent)
    ("M-q" fill-paragraph-justify)
-   ("<escape> SPC" just-one-space)))
+   ("<escape> SPC" just-one-space)
+   
+   ("M-C-l" wcy-mark-some-thing-at-point)
+   
+   ;;emaci   
+   ("C-x q" toggole-emaci-mode)
+   ;;grep-setting   
+   ("C-x F"   find-grep-in-current-dir)
+   ("C-x f"   find-grep-in-dir)
+   ("C-x M-f" find-grep-current-word-in-current-dir)
+   ("C-x M-F" find-grep-current-word)
+   ;;help-setting    
+   ("C-x H" goto-help-buffer) 
+   ;;hide-region-setting 
+   ("C-x M-r" hide-region-hide)
+   ("C-x M-R" hide-region-unhide)
+   ;;info
+   ("C-x I" info-max-window)
+   ;;isearch 
+   ("C-x M-s" isearch-forward-cur-word)
+   ("M-n" next-error)
+   ("M-p" previous-error)
+   ;;maxframe   
+   ("M-SPC x"   toggle-maximize-frame)
+   ("M-SPC M-x" toggle-maximize-frame)
+   ("M-SPC n"   minimize-frame)
+   ("M-SPC c"   delete-frame)
+   ("M-SPC M-c" delete-frame)
+   ;;recent-jmp
+   ("M-,"   recent-jump-backward)
+   ("M-."   recent-jump-forward)
+   ("C-x ," recent-jump-small-backward)
+   ("C-x ." recent-jump-small-forward)
+   ;;man
+   ("C-x M" man)
+   ))
+;================major-map=================
 
-(define-key global-map (kbd "M-C-l") 'wcy-mark-some-thing-at-point)
- 
-;;emaci
-(eal-define-keys-commonly
-   global-map
-   `(("C-x q" toggole-emaci-mode)))
-
-  ;;grep-setting
-(unless is-before-emacs-21
-  (eal-define-keys-commonly
-   global-map
-   `(("C-x F"   find-grep-in-current-dir)
-     ("C-x f"   find-grep-in-dir)
-     ("C-x M-f" find-grep-current-word-in-current-dir)
-     ("C-x M-F" find-grep-current-word)))
-  
-  (eal-define-keys
+(eal-define-keys
    'grep-mode-map
    `(("q"     bury-buffer)
      ("Q"     kill-this-buffer)
@@ -182,54 +186,8 @@
      ("t"     sb-toggle-keep-buffer)
      ("N"     select-buffer-forward)
      ("P"     select-buffer-backward)
-     ("L"     count-brf-lines))))
-
-;;help-setting
-(define-key global-map (kbd "C-x H") 'goto-help-buffer)
-
-;;hide-region-setting
-(eal-define-keys-commonly
- global-map
- `(("C-x M-r" hide-region-hide)
-   ("C-x M-R" hide-region-unhide)))
-;;info
-(eal-define-keys-commonly
- global-map
- `(("C-x I" info-max-window)))
-;;isearch 
-(define-key-list
-    global-map
-    `(("C-x M-s" isearch-forward-cur-word)))
-;;man
-(define-key global-map (kbd "C-x M") 'man)
-
-(define-prefix-command 'm-spc-map)
-(global-set-key (kbd "M-SPC") 'm-spc-map)
-
-;;maxframe
-(let ((map global-map)
-      (key-pairs
-       `(("M-SPC x"   toggle-maximize-frame)
-         ("M-SPC M-x" toggle-maximize-frame)
-         ("M-SPC n"   minimize-frame)
-         ("M-SPC c"   delete-frame)
-         ("M-SPC M-c" delete-frame))))
-  (apply-define-key map key-pairs))
-;;recent-jmp
-(let ((map global-map)
-      (key-pairs
-       `(("M-,"   recent-jump-backward)
-         ("M-."   recent-jump-forward)
-         ("C-x ," recent-jump-small-backward)
-         ("C-x ." recent-jump-small-forward))))
-  (apply-define-key map key-pairs))
-
-(eal-define-keys-commonly
- global-map
- `(("M-n" next-error)
-   ("M-p" previous-error)))
- 
-;================major-map=================
+     ("L"     count-brf-lines)))
+     
 (eal-define-keys
  'yas/keymap
  `(("M-j"     yas/next-field-or-maybe-expand)
