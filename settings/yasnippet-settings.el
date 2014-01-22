@@ -8,27 +8,17 @@
 
 (defun yasnippet-settings ()
   "settings for `yasnippet'."
-  (setq yas/root-directory (concat my-emacs-path "snippets"))
-
-  (defun yasnippet-unbind-trigger-key ()
-    "Unbind `yas/trigger-key'."
-    (let ((key yas/trigger-key))
-      (setq yas/trigger-key nil)
-      (yas/trigger-key-reload key)))
-
-  (yasnippet-unbind-trigger-key)
   
 ;;;###autoload
   (defun yasnippet-reload-after-save ()
     (let* ((bfn (expand-file-name (buffer-file-name)))
-           (root (expand-file-name yas/root-directory)))
+           (root (expand-file-name yas-snippet-dirs)))
       (when (string-match (concat "^" root) bfn)
-        (yas/load-snippet-buffer))))
-  (add-hook 'after-save-hook 'yasnippet-reload-after-save))
+        (yas-load-snippet-buffer))))
+  ;(add-hook 'after-save-hook 'yasnippet-reload-after-save)
+  )
 
 (eval-after-load "yasnippet"
   `(yasnippet-settings))
-
-(yas/load-directory yas/root-directory)
 
 (provide 'yasnippet-settings)

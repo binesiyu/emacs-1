@@ -41,8 +41,7 @@
 (require 'image-mode)
 (require 'eieio)
 (eval-when-compile
-  (require 'cl)
-  (require 'eieio-comp))
+  (require 'cl))
 
 (defclass ppm () ((width :initarg :w)
                   (height :initarg :h)
