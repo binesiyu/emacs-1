@@ -66,7 +66,7 @@
        :box nil
        :underline t)))))
 
-(eval-after-load "mode-line-settings"
+(eval-after-load "init-settings-mode-line"
   '(progn
      (defface mode-line-lines-face
        '((((type tty pc)) :background "red" :foreground "white")

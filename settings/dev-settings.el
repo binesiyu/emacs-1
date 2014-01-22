@@ -200,8 +200,6 @@
 ;                 sr-speedbar-settings
 ;                 codepilot-settings
 ;                 ;;perl-settings
-;                 ;; 实现程序变量的自动对齐
-;                 align-settings
 ;                 ;; 生成c程序调用图
 ;                 ;; http://emacser.com/emacs-cflow.htm
 ;                 ;;cflow-mode-settings

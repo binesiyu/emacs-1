@@ -40,14 +40,6 @@
 
 (define-key minibuffer-local-completion-map (kbd "C-k") 'kill-line)
 
-(autoload 'copy-region-as-kill-nomark "pc-select"
-  "Save the region as if killed; but don't kill it; deactivate mark.
-If `interprogram-cut-function' is non-nil, also save the text for a window
-system cut and paste.
-
-Deactivating mark is to avoid confusion with `delete-selection-mode'
-and `transient-mark-mode'." t)
-
 ;;;###autoload
 (defmacro def-action-on-area-command (fun-name action mark-area doc)
   `(defun ,fun-name ()
@@ -59,11 +51,11 @@ and `transient-mark-mode'." t)
 
 (apply-args-list-to-fun
  'def-action-on-area-command
-  `((copy-function        'copy-region   'mark-function     "Copy function.")
+  `((copy-function        'kill-ring-save   'mark-function     "Copy function.")
     (kill-function        'kill-region   'mark-function     "Kill function.")
     (indent-function      'indent-region 'mark-function     "Indent function.")
     (indent-paragraph     'indent-region 'mark-paragraph    "Indent paragraph.")
-    (copy-whole-buffer    'copy-region   'mark-whole-buffer "Copy whole buffer.")
+    (copy-whole-buffer    'kill-ring-save   'mark-whole-buffer "Copy whole buffer.")
     (kill-whole-buffer    'kill-region   'mark-whole-buffer "Kill whole buffer.")
     (indent-whole-buffer  'indent-region 'mark-whole-buffer "Indent whole buffer.")))
 

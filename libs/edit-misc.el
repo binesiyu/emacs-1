@@ -82,7 +82,7 @@ If NOT-WHOLE is non-nil, do not copy whole sexp."
   (save-excursion
     (mark-whole-sexp not-whole)
     (if mark-active
-        (copy-region (region-beginning) (region-end)))))
+        (kill-ring-save (region-beginning) (region-end)))))
 
 ;;;###autoload
 (defun my-kill-word ()
@@ -137,14 +137,14 @@ If NOT-WHOLE is non-nil, do not copy whole sexp."
           (mark-command t)
           (forward-paragraph))
       (call-interactively 'mark-paragraph))
-    (call-interactively 'copy-region)))
+    (call-interactively 'kill-ring-save)))
 
 ;;;###autoload
 (defun copy-cur-line ()
   "拷贝当前行"
   (interactive)
   (let ((end (min (point-max) (1+ (line-end-position)))))
-    (copy-region-as-kill-nomark (line-beginning-position) end)))
+    (kill-ring-save (line-beginning-position) end)))
 
 ;;;###autoload
 (defun copy-lines (&optional number)
@@ -160,25 +160,25 @@ If NOT-WHOLE is non-nil, do not copy whole sexp."
         (move-beginning-of-line nil)
         (set-mark-command nil)
         (goto-line (+ number lineNo))
-        (call-interactively 'copy-region-as-kill-nomark)))))
+        (call-interactively 'kill-ring-save)))))
 
 ;;;###autoload
 (defun copy-line-left ()
   "拷贝当前行光标后面的文字"
   (interactive)
-  (copy-region-as-kill-nomark (point) (min (1+ (line-end-position)) (point-max))))
+  (kill-ring-save (point) (min (1+ (line-end-position)) (point-max))))
 
 ;;;###autoload
 (defun smart-copy ()
-  "智能拷贝, 如果`mark-active'的话, 则`copy-region', 否则`copy-lines'"
+  "智能拷贝, 如果`mark-active'的话, 则`kill-ring-save', 否则`copy-lines'"
   (interactive)
-  (if mark-active (call-interactively 'copy-region) (call-interactively 'copy-lines)))
+  (if mark-active (call-interactively 'kill-ring-save) (call-interactively 'copy-lines)))
 
 ;;;###autoload
 (defun copy-region-and-paste ()
   "拷贝region并且粘贴到region后"
   (interactive)
-  (call-interactively 'copy-region)
+  (call-interactively 'kill-ring-save)
   (call-interactively 'yank))
 
 ;;;###autoload
@@ -211,7 +211,7 @@ If NOT-WHOLE is non-nil, do not copy whole sexp."
   (interactive)
   (save-excursion
     (call-interactively 'mark-end-of-sentence)
-    (call-interactively 'copy-region-as-kill-nomark)))
+    (call-interactively 'kill-ring-save)))
 
 ;; 删除当前光标到行首的字符
 ;;;###autoload
@@ -220,7 +220,7 @@ If NOT-WHOLE is non-nil, do not copy whole sexp."
   (interactive "P")
   (if (not arg)
       (kill-line 0)
-    (copy-region-as-kill-nomark (1+ (line-beginning-position)) (point))))
+    (kill-ring-save (1+ (line-beginning-position)) (point))))
 
 ;;;###autoload
 (defun lisp-mark-function (&optional allow-extend)

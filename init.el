@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2014-01-21 16:22:45 Tuesday by yubin>
+;; Time-stamp: <2014-01-22 10:21:20 Wednesday by yubin>
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/init"))
@@ -76,9 +76,6 @@
 ;; Emacs可以做为一个server, 然后用emacsclient连接这个server,
 ;; 无需再打开两个Emacs
 (require 'emacs-server-settings)
-
-;; 显示ascii表
-;(require 'ascii)
 
 ;; 所有关于查看帮助方面的配置
 (require 'all-help-settings)

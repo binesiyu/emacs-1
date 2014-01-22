@@ -41,7 +41,7 @@
     (interactive)
     (save-excursion
       (mark-whole-buffer)
-      (call-interactively 'copy-region-as-kill-nomark))
+      (call-interactively 'kill-ring-save))
     (with-temp-buffer
       (call-interactively 'yank)
       (call-interactively 'write-file)))
@@ -88,7 +88,7 @@
         (with-current-buffer buffer
           (save-excursion
             (mark-whole-buffer)
-            (call-interactively 'copy-region-as-kill-nomark)))
+            (call-interactively 'kill-ring-save)))
         (let* ((new-name
                 (concat
                  w3m-buffer-name-prefix

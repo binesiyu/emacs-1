@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-01-20 13:32:47 Monday by yubin>
+;; Time-stamp: <2014-01-22 10:40:18 Wednesday by yubin>
 
  (setq package-archives
           '(("gnu"         . "http://elpa.gnu.org/packages/")

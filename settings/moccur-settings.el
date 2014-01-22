@@ -48,8 +48,8 @@
     (local-set-key (kbd "b") 'backward-word)
     (local-set-key (kbd "w") 'forward-word-or-to-word)
     (local-set-key (kbd "f") 'forward-word)
-    (local-set-key (kbd "y") 'copy-region-as-kill-nomark)
-    (local-set-key (kbd "c") 'copy-region-as-kill-nomark)
+    (local-set-key (kbd "y") 'kill-ring-save)
+    (local-set-key (kbd "c") 'kill-ring-save)
     (local-set-key (kbd ".") 'set-mark-command)
     (local-set-key (kbd "L") 'count-brf-lines))
 
