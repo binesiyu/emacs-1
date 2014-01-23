@@ -1,7 +1,7 @@
 ;;; init-miscs-fun.el --- Some basic utility function of ahei
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-09-11 09:53:02 Saturday by taoshanwen>
+;; Time-stamp: <2014-01-23 14:36:53 Thursday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -89,36 +89,6 @@ See also `with-temp-buffer'."
 (defun am-equal-ignore-case (str1 str2)
   "STR1 equal ignore case to STR2 or not."
   (string= (downcase str1) (downcase str2)))
-
- 
-;;;###autoload
-(defun execute-command-on-file (file command)
-  "对FILE执行命令COMMAND"
-  (interactive
-   (list (read-file-name "File execute command on: ")
-         (let* ((input ""))
-           (while (string= input "")
-             (setq input (read-string "命令: ")))
-           input)))
-  (if file
-      (when (yes-or-no-p (concat command " file `" file "'?"))
-        (shell-command (concat command " \"" file "\"")))
-    (message "Executing command `%s'..." command)
-    (shell-command command)))
-
-;;;###autoload
-(defun execute-command-on-current-file (command)
-  "对当前buffer执行命令COMMAND, 如果该buffer对应文件的话, 再执行`revert-buffer-no-confirm'"
-  (interactive
-   (list (let* ((input ""))
-           (while (string= input "")
-             (setq input (read-string "命令: ")))
-           input)))
-  (let* ((file (buffer-file-name)))
-    (execute-command-on-file file command)
-    (if file
-        (revert-buffer-no-confirm))))
-
 
 ;;;###autoload
 (defmacro define-kbd     (keymap key def) `(define-key ,keymap (kbd ,key) ,def))

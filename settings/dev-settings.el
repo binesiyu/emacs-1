@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-04-28 19:26:00 Saturday by taoshanwen>
+;; Time-stamp: <2014-01-23 16:16:32 Thursday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -103,9 +103,6 @@
 ;; `gdb'
 ;(require 'gud-settings)
 
-;; subversion
-;(require 'svn-settings)
-
 ;; 版本控制
 ;(require 'vc-settings)
 
@@ -174,13 +171,9 @@
 ;; 自动给你加上括号
 (require 'autopair-settings)
 
-;; 把Eclipse的功能带给Emacs
-(require 'eclim-settings)
-
 ;; 方便开发c/c++的配置
 ;(require 'c-settings)
 
-;; 放在kde-emacs后面
 ;(require 'compile-settings)
 
 (defun copy-current-fun-name ()

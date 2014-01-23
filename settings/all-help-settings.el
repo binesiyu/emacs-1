@@ -17,9 +17,6 @@
 ;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-;; 重新定义`help-command',因为C-h已经绑定为删除前面的字符
-(global-set-key (kbd "C-x /") 'help-command)
-
 (require 'help-mode-settings)
 
 ;; Emacs中的info

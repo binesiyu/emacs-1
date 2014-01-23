@@ -3,7 +3,7 @@
 ;; Author: ahei <ahei0802@gmail.com>
 ;; Keywords: 
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/edit-misc.el
-;; Time-stamp: <2010-06-16 10:25:34 Wednesday by ahei>
+;; Time-stamp: <2014-01-23 16:46:13 Thursday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -39,15 +39,9 @@
 (defun backward-kill-word-or-kill-region ()
   "`mark-active'时, 剪切选择的区域, 平时向后删除word, 和bash下面一样."
   (interactive)
-  (if (rm-mark-active)
-      (call-interactively 'rm-kill-region)
-    (if mark-active
-        (if cua--rectangle
-            (progn
-              (cua-cut-rectangle t)
-              (cua-cancel))
-          (call-interactively 'kill-region))
-      (call-interactively 'backward-kill-word))))
+  (if mark-active
+      (call-interactively 'kill-region)
+      (call-interactively 'backward-kill-word)))
 
 ;;;###autoload
 (defun mark-whole-sexp (&optional not-whole)

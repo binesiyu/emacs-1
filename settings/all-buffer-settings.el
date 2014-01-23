@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2014-01-21 12:56:53 Tuesday by yubin>
+;; Time-stamp: <2014-01-23 14:44:42 Thursday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -17,17 +17,8 @@
 ;; write  to  the Free  Software  Foundation,  Inc., 51  Franklin
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
-;; 按下C-x k立即关闭掉当前的buffer
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
-
-;; ibuffer
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-
 ;; 非常方便的切换buffer和打开文件
 (require 'ido-settings)
-
-;; 像linux系统下alt-tab那样选择buffer, 但是更直观, 更方便
-;(require 'select-buffer)
 
 ;; 可以为重名的buffer在前面加上其父目录的名字来让buffer的名字区分开来，而不是单纯的加一个没有太多意义的序号
 (require 'uniquify)
@@ -76,6 +67,5 @@
     (switch-to-buffer buffer)
     (unless (equal major-mode 'lisp-interaction-mode)
       (lisp-interaction-mode))))
-(global-set-key (kbd "C-x s") 'switch-to-scratch)
 
 (provide 'all-buffer-settings)

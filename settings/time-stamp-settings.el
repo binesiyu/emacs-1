@@ -1,8 +1,8 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-04-10 21:15:42 Saturday by ahei>
+;; Time-stamp: <2014-01-23 13:31:04 Thursday by yubin>
 
-(add-hook 'write-file-hooks 'time-stamp)
+(add-hook 'write-file-functions 'time-stamp)
 
 (eval-after-load "time-stamp"
   '(progn

@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-08-29 18:34:06 Sunday by taoshanwen>
+;; Time-stamp: <2014-01-23 16:15:42 Thursday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -36,9 +36,6 @@
   (add-hook 'c-mode-common-hook 'c-mode-common-hook-settings)
 
   (add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
-
-  ;; kde-emacs 一个方便开发c的工具
-  (require 'kde-emacs-settings)
 
   ;; 高亮显示C/C++中的可能的错误(CWarn mode)
   (global-cwarn-mode 1)

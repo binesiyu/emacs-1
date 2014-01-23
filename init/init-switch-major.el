@@ -51,13 +51,11 @@
   (let ((last-mode major-mode))
     (funcall mode)
     (setq switch-major-mode-last-mode last-mode)))
-(global-set-key (kbd "C-x q") 'switch-major-mode)
 
 (defun get-mode-name ()
   "显示`major-mode'及`mode-name'"
   (interactive)
   (message "major-mode为%s, mode-name为%s" major-mode mode-name))
-(global-set-key (kbd "C-x m") 'get-mode-name)
 
 (provide 'init-switch-major)
 ;;; init-switch-major.el ends here

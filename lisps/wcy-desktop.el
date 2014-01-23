@@ -35,10 +35,12 @@
 ;;;###autoload 
 (defvar wcy-desktop-file-name "~/.wcy_desktop_save")
 (defvar wcy-desktop-key-map nil)
+
 (when (null wcy-desktop-key-map)
   (setq wcy-desktop-key-map (make-keymap))
   (define-key wcy-desktop-key-map (kbd "C-x") ctl-x-map)
   (fillarray (cadr wcy-desktop-key-map) 'wcy-desktop-load-file))
+
 (defun  wcy-desktop-on-kill-emacs ()
   "save the buffer list, this should be part of kill-emacs-hook"
   (with-temp-file wcy-desktop-file-name
@@ -47,11 +49,13 @@
 			    (cons default-directory buffer-file-name)))
 	     (remove-if-not 'buffer-file-name (buffer-list)))
      (current-buffer))))
+
 (defun  wcy-desktop-init ()
   "this function install the wcy-desktop. put
 it (wcy-desktop-init) in your ~/.emacs "
   (add-hook 'kill-emacs-hook 'wcy-desktop-on-kill-emacs)
   (wcy-desktop-open-last-opened-files))
+
 (defun  wcy-desktop-open-last-opened-files ()
   "open files which are still open in last session."
   (when (file-readable-p wcy-desktop-file-name)
@@ -78,6 +82,7 @@ it (wcy-desktop-init) in your ~/.emacs "
                          mode-name  "not loaded yet")
                    (set-buffer-modified-p nil))))))
 	 alist)))))
+
 (defun  wcy-desktop-load-file (&optional buffer)
   "load file by reverting buffer"
   (interactive)
@@ -88,10 +93,12 @@ it (wcy-desktop-init) in your ~/.emacs "
       (revert-buffer nil t nil)
       (when (eq major-mode 'not-loaded-yet)
         (fundamental-mode)))))
+
 ;;;###autoload 
 (defun  wcy-desktop-load-all-files ()
   "load all unloaded file"
   (interactive)
   (mapc 'wcy-desktop-load-file (buffer-list)))
+
 (provide 'wcy-desktop)
 ;;; wcy-desktop.el ends here

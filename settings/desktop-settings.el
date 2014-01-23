@@ -1,10 +1,9 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-04-10 22:44:35 Saturday by ahei>
+;; Time-stamp: <2014-01-23 17:39:28 Thursday by yubin>
 
 (eval-after-load "desktop"
   '(progn
-     
 
      (setq desktop-load-locked-desktop t)
      (if is-before-emacs-21 (desktop-load-default) (desktop-save-mode 1))
@@ -20,6 +19,6 @@
       global-map
       `(("C-x M-C" desktop-clear)))))
 
-(desktop-read)
+(desktop-save-mode 1)
 
 (provide 'desktop-settings)

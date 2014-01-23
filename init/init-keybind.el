@@ -33,6 +33,35 @@
 
 ;================global-map=================
 
+;; 按下C-x k立即关闭掉当前的buffer
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
+;; ibuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x s") 'switch-to-scratch)
+
+(global-set-key (kbd "C-x D") 'ediff)
+
+(global-set-key (kbd "M-/") 'hippie-expand)
+(global-set-key (kbd "C-x C-f") 'ido-find-file)
+
+;; 重新定义`help-command',因为C-h已经绑定为删除前面的字符
+(global-set-key (kbd "C-x /") 'help-command)
+
+;; 查找定义
+(global-set-key (kbd "C-c x d") 'xref-push-and-goto-definition)
+;; 返回
+(global-set-key (kbd "C-c x r") 'xref-pop-and-return)
+;; 浏览符号
+(global-set-key (kbd "C-c x b") 'xref-browse-symbol)
+;; 上一个引用
+(global-set-key (kbd "C-c x ,") 'xref-previous-reference)
+;; 下一个引用
+(global-set-key (kbd "C-c x .") 'xref-next-reference)
+
+(global-set-key (kbd "C-x m") 'get-mode-name)
+(global-set-key (kbd "C-x q") 'switch-major-mode)
+
+(global-set-key (kbd "C-x E") 'visit-.emacs)
 ;;org
 (define-prefix-command 'm-spc-map)
 (global-set-key (kbd "M-SPC") 'm-spc-map)
@@ -126,7 +155,7 @@
    ("C-x w" copy-sexp)
    ("M-D" my-kill-word)
    ("C-x TAB" indent-whole-buffer)
-   ("C-h" c-electric-backspace-kill)
+   ("C-h" delete-backward-char)
    ("C-z" undo)
    ("M-Y" redo)
    ("M-m" beginning-of-line-text)
@@ -292,7 +321,7 @@
    ("w"         scroll-down)
    ("C-c ."     Info-history-forward)))
 
-  (eal-define-keys
+(eal-define-keys
    'help-mode-map
    `(("B"   help-go-back)
      ("F"   help-go-forward)

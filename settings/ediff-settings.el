@@ -2,8 +2,6 @@
 
 ;; Time-stamp: <2010-11-04 17:06:12 Thursday by taoshanwen>
 
-(global-set-key (kbd "C-x D") 'ediff)
-
 (defun ediff-settings ()
   "settings for `ediff'."
   (defun ediff-variable-settings ()

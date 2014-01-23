@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2014-01-22 15:11:44 Wednesday by yubin>
+;; Time-stamp: <2014-01-23 17:53:13 Thursday by yubin>
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/init"))
@@ -42,7 +42,6 @@
 ;; frame-cmds.el必须放在multi-term前面,否则ediff退出时会出现错误
 ;; 而icicles soft-requires frame-cmds.el, 所以icicles也必须放在multi-term前面
 ;; emacs22下也必须放在kde-emacs前面, 否则会说shell-command是void-function
-;; http://emacser.com/icicles-doremi-palette.htm
 (require 'icicles-settings)
 (require 'doremi-settings)
 (require 'palette-settings)
@@ -137,39 +136,8 @@
 ;; org是一个非常强大的GTD工具
 (require 'init-org)
 
-
-
 ;; 关闭buffer的时候, 如果该buffer有对应的进程存在, 不提示, 烦
 (delq 'process-kill-buffer-query-function kill-buffer-query-functions)
-
-(autoload 'org-open-file "org"
-  "Open the file at PATH.
-First, this expands any special file name abbreviations.  Then the
-configuration variable `org-file-apps' is checked if it contains an
-entry for this file type, and if yes, the corresponding command is launched.
-
-If no application is found, Emacs simply visits the file.
-
-With optional prefix argument IN-EMACS, Emacs will visit the file.
-With a double \\[universal-argument] \\[universal-argument] \
-prefix arg, Org tries to avoid opening in Emacs
-and to use an external application to visit the file.
-
-Optional LINE specifies a line to go to, optional SEARCH a string
-to search for.  If LINE or SEARCH is given, the file will be
-opened in Emacs, unless an entry from org-file-apps that makes
-use of groups in a regexp matches.
-If the file does not exist, an error is thrown.")
-
-(defun open-file-with-app (file)
-  "Open file with appropriate application."
-  (interactive "fFile to open: ")
-  (org-open-file file))
-
-(defun open-current-file-with-app ()
-  "Open current file with appropriate application."
-  (interactive)
-  (open-file-with-app buffer-file-name))
 
 ;; 一些有趣的东西
 (require 'funny)
@@ -198,8 +166,6 @@ If the file does not exist, an error is thrown.")
 
 (require 'comint-settings)
 
-(require 'evernote-mode-settings)
-
 ;; session,可以保存很多东西，例如输入历史(像搜索、打开文件等的输入)、
 ;; register的内容、buffer的local variables以及kill-ring和最近修改的文件列表等。非常有用。
 (require 'session-settings)
@@ -214,7 +180,5 @@ If the file does not exist, an error is thrown.")
 ;; desktop,用来保存Emacs的桌面环境 — buffers、以及buffer的文件名、major modes和位置等等
 ;; (require 'desktop-settings)
 
-;(sb-update)
-
 ;; 加载用户自己的配置
-(load "~/my.emacs" t)
+(require 'init-custom)

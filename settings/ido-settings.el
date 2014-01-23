@@ -13,7 +13,6 @@
   (setq ido-use-filename-at-point t)
   (add-hook ido-define-mode-map-hook 'ido-keys)
 
-  (global-set-key (kbd "C-x C-f") 'ido-find-file)
   (setq ido-max-directory-size 1000000)
 
   (defmacro def-ido-enter-command (command)

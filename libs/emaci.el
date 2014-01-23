@@ -5,7 +5,7 @@
 ;; Author: ahei <ahei0802@gmail.com>
 ;; Keywords: emacs vi
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/emaci.el
-;; Time-stamp: <2010-12-01 11:40:29 Wednesday by taoshanwen>
+;; Time-stamp: <2014-01-23 17:18:39 Thursday by yubin>
 
 ;; This file is  free software; you can redistribute  it and/or modify
 ;; it under the  terms of the GNU General  Public License as published
@@ -290,7 +290,8 @@ a command."
 ;;;###autoload
 (defun emaci-exist-file ()
   "Only when variable `buffer-file-name' is exist, enter function `emaci-mode'."
-  (when (file-exists-p (buffer-file-name))
+  (when (and (file-exists-p (buffer-file-name))
+              (not (memq major-mode '(org-mode org-aganda-mode))))
     (emaci-mode-on)))
 
 ;;;###autoload

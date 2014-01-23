@@ -2,8 +2,6 @@
 
 ;; Time-stamp: <2010-04-10 18:07:41 Saturday by ahei>
 
-(global-set-key (kbd "M-/") 'hippie-expand)
-
 (defun hippie-expand-settings ()
   "Settings for `hippie-expand'."
   (setq hippie-expand-try-functions-list

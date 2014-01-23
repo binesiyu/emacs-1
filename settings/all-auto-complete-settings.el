@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-11-21 14:06:46 Sunday by taoshanwen>
+;; Time-stamp: <2014-01-23 16:06:23 Thursday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -29,7 +29,7 @@
 (require 'template-settings)
 
 ;; 自动插入一些文件模板
-(require 'auto-insert-settings)
+;; (require 'auto-insert-settings)
 
 ;; 超强的snippet
 (require 'yasnippet-settings)
@@ -37,14 +37,10 @@
 ;; 用M-x执行某个命令的时候，在输入的同时给出可选的命令名提示
 (require 'icomplete-settings)
 
-;; minibuffer中输入部分命令就可以使用补全
-(unless is-after-emacs-23
-  (partial-completion-mode 1))
-  
 (require 'completion-list-mode-settings)
  
  ;; 简写模式
-(setq-default abbrev-mode t)
-(setq save-abbrevs nil)
+;(setq-default abbrev-mode t)
+;(setq save-abbrevs nil)
 
 (provide 'all-auto-complete-settings)

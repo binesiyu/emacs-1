@@ -42,7 +42,6 @@
   "访问.emacs文件"
   (interactive)
   (find-file (concat my-emacs-path ".emacs")))
-(global-set-key (kbd "C-x E") 'visit-.emacs)
 
 ;; grep
 (require 'grep-settings)
@@ -59,6 +58,7 @@ If FULL is t, copy full file name."
         (setq file (expand-file-name file)))
     (kill-new file)
     (message "File `%s' copied." file)))
+
 (eal-define-keys
  `(emacs-lisp-mode-map lisp-interaction-mode-map java-mode-map sh-mode-map
                        c-mode-base-map text-mode-map ruby-mode-map html-mode-map
@@ -70,14 +70,17 @@ If FULL is t, copy full file name."
   "Goto `my-emacs-lisps-path'."
   (interactive)
   (dired my-emacs-lisps-path))
+
 (defun goto-my-emacs-my-lisps-dir ()
   "Goto `my-emacs-my-lisps-path'."
   (interactive)
   (dired my-emacs-my-lisps-path))
+
 (defun goto-my-emacs-dir ()
   "Goto `my-emacs-path'."
   (interactive)
   (dired my-emacs-path))
+
 (defun goto-my-home-dir ()
   "Goto my home directory."
   (interactive)
@@ -129,6 +132,34 @@ If FULL is t, copy full file name."
      ,(concat "Execute command `" command "' on current directory.")
      (interactive)
      (execute-command-on-current-dir ,command)))
- 
+
+;;;###autoload
+(defun execute-command-on-file (file command)
+  "对FILE执行命令COMMAND"
+  (interactive
+   (list (read-file-name "File execute command on: ")
+         (let* ((input ""))
+           (while (string= input "")
+             (setq input (read-string "命令: ")))
+           input)))
+  (if file
+      (when (yes-or-no-p (concat command " file `" file "'?"))
+        (shell-command (concat command " \"" file "\"")))
+    (message "Executing command `%s'..." command)
+    (shell-command command)))
+
+;;;###autoload
+(defun execute-command-on-current-file (command)
+  "对当前buffer执行命令COMMAND, 如果该buffer对应文件的话, 再执行`revert-buffer-no-confirm'"
+  (interactive
+   (list (let* ((input ""))
+           (while (string= input "")
+             (setq input (read-string "命令: ")))
+           input)))
+  (let* ((file (buffer-file-name)))
+    (execute-command-on-file file command)
+    (if file
+        (revert-buffer-no-confirm))))
+
 (provide 'init-files)
 ;;; init-files.el ends here

@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2010-11-21 13:46:01 Sunday by taoshanwen>
+;; Time-stamp: <2014-01-23 15:45:04 Thursday by yubin>
 
 (auto-insert-mode 1)
 
@@ -41,7 +41,7 @@
     "Insert snippet SNIPPET."
     (interactive "s")
     (insert snippet)
-    (yas/expand))
+    (yas-expand))
 
   (mapc
    (lambda (suffix)
