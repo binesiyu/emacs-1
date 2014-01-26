@@ -110,7 +110,7 @@
     (funcall hook-action 'pre-command-hook 'rjs-pre-command)
     (funcall hook-action 'post-command-hook 'rjs-post-command)))
 
-(dolist (var (list 'rjs-ring 'rjs-index 'rjs-position-before))
-  (add-to-list 'desktop-globals-to-save var))
+;(dolist (var (list 'rjs-ring 'rjs-index 'rjs-position-before))
+;  (add-to-list 'desktop-globals-to-save var))
 
 (provide 'recent-jump-small)

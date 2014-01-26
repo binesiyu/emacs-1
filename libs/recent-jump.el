@@ -139,7 +139,7 @@
     (funcall hook-action 'pre-command-hook 'rj-pre-command)
     (funcall hook-action 'post-command-hook 'rj-post-command)))
 
-(dolist (var (list 'rj-ring 'rj-index 'rj-position-before))
-  (add-to-list 'desktop-globals-to-save var))
+;(dolist (var (list 'rj-ring 'rj-index 'rj-position-before))
+;  (add-to-list 'desktop-globals-to-save var))
 
 (provide 'recent-jump)
