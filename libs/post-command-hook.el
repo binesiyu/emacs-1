@@ -3,8 +3,7 @@
 ;; Time-stamp: <2010-04-08 18:30:39 Thursday by ahei>
 
 (defvar commands-with-recenter
-  '(delete-other-windows
-    sb-toggle-keep-buffer)
+  '(delete-other-windows)
   "*运行命令后需要执行`recenter'的命令")
 
 (defvar commands-with-displn

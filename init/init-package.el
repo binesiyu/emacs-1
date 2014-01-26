@@ -48,5 +48,4 @@
 (require-package 'thingatpt+)
 (require-package 'vline)
 
-
 (provide 'init-package)

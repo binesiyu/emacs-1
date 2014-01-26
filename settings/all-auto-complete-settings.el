@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2014-01-23 16:06:23 Thursday by yubin>
+;; Time-stamp: <2014-01-26 11:13:31 Sunday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -20,8 +20,6 @@
 ;; hippie expand
 (require 'hippie-expand-settings)
 
-;; 自动补全
-(require 'auto-complete-settings)
 
 ;; (require 'company-settings)
 
@@ -33,6 +31,10 @@
 
 ;; 超强的snippet
 (require 'yasnippet-settings)
+
+;; 自动补全
+(require 'auto-complete-settings)
+
 
 ;; 用M-x执行某个命令的时候，在输入的同时给出可选的命令名提示
 (require 'icomplete-settings)

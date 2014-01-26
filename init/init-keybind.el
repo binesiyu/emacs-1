@@ -212,7 +212,6 @@
      ("S-SPC" View-scroll-half-page-backward)
      ("SPC"   View-scroll-half-page-forward)
      ("/"     describe-symbol-at-point)
-     ("t"     sb-toggle-keep-buffer)
      ("N"     select-buffer-forward)
      ("P"     select-buffer-backward)
      ("L"     count-brf-lines)))
@@ -224,8 +223,7 @@
    
 (eal-define-keys
  'woman-mode-map
- `(("t"     sb-toggle-keep-buffer)
-   ("w"     scroll-down)
+ `(("w"     scroll-down)
    ("v"     set-mark-command)))
    
 (eal-define-keys
@@ -239,7 +237,6 @@
    ("Q"           delete-current-window)
    ("L"           count-brf-lines)
    ("1"           delete-other-windows)
-   ("t"           sb-toggle-keep-buffer)
    ("<backspace>" c-electric-backspace)
    ("u"           View-scroll-half-page-backward)
    ("S-SPC"       View-scroll-half-page-backward)
@@ -278,7 +275,6 @@
    ("b"     emaci-b)
    ("n"     emaci-n)
    ("p"     emaci-p)
-   ("t"     sb-toggle-keep-buffer)
    ("N"     Man-next-section)
    ("P"     Man-previous-section)
    ("m"     back-to-indentation)
@@ -463,7 +459,6 @@
 
        ("c"           dired-do-copy)
        ("E"           dired-ediff)
-       ("t"           sb-toggle-keep-buffer)
        ("M-m"         dired-unmark-backward)
        ("C-c M-m"     dired-create-directory)
        
@@ -510,7 +505,6 @@
  `(("/" describe-symbol-at-point)
    ("'" switch-to-other-buffer)
    ("L" count-brf-lines)
-   ("t" sb-toggle-keep-buffer)
    ("]" goto-paren)
    ("c" go-to-char-forward)
    ("C" go-to-char-backward)))

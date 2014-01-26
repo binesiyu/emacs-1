@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2012-01-01 13:12:37 Sunday by taoshanwen>
+;; Time-stamp: <2014-01-26 11:24:11 Sunday by yubin>
 
 (require 'auto-complete-config)
 (require 'auto-complete+)
@@ -17,7 +17,7 @@
   (add-to-list 'ac-dictionary-directories (concat my-emacs-lisps-path "auto-complete/dict"))
 
   (setq ac-auto-show-menu t
-        ac-auto-start nil
+        ac-auto-start t
         ac-dwim t
         ac-candidate-limit ac-menu-height
         ac-quick-help-delay .5
