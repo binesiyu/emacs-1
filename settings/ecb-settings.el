@@ -2,7 +2,7 @@
 
 ;; Author: ahei <ahei0802@gmail.com>
 ;; URL: http://code.google.com/p/dea/source/browse/trunk/my-lisps/ecb-settings.el
-;; Time-stamp: <2010-04-10 15:59:33 Saturday by ahei>
+;; Time-stamp: <2014-01-27 17:10:11 Monday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -20,6 +20,8 @@
 ;; Street, Fifth Floor, Boston, MA 02110-1301, USA.
 
 (require 'ecb-autoloads)
+
+(setq ecb-examples-bufferinfo-buffer-name nil)
 
 (defun ecb ()
   "启动ecb"

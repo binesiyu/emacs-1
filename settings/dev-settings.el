@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2014-01-23 16:16:32 Thursday by yubin>
+;; Time-stamp: <2014-01-27 16:11:25 Monday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -87,10 +87,10 @@
 ;; cedet 强大的开发工具, 包括代码浏览, 补全, 类图生成
 ;; 用CEDET浏览和编辑C++代码 http://emacser.com/cedet.htm
 ;; Emacs才是世界上最强大的IDE － cedet的安装 http://emacser.com/install-cedet.htm
-;;(require 'cedet-settings)
+(require 'cedet-settings)
 
 ;; ecb 代码浏览器
-;(require 'ecb-settings)
+(require 'ecb-settings)
 
 ;; doxygen
 ;(require 'doxymacs-settings)

@@ -1,4 +1,4 @@
-;; Time-stamp: <2014-01-24 08:55:37 Friday by yubin>
+;; Time-stamp: <2014-01-27 16:10:52 Monday by yubin>
 
 ;; 一个Emacs的16进制文件查看器，可以瞬间打开巨大的文件，比官方的hexl-mode好用
 ;(require-package 'hexview-mode)
@@ -47,5 +47,8 @@
 (require-package 'synonyms)
 (require-package 'thingatpt+)
 (require-package 'vline)
+
+;;ecb
+(require-package 'ecb)
 
 (provide 'init-package)
