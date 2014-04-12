@@ -1,6 +1,6 @@
 ;; -*- Emacs-Lisp -*-
 
-;; Time-stamp: <2014-01-27 16:11:25 Monday by yubin>
+;; Time-stamp: <2014-03-13 09:18:20 Thursday by yubin>
 
 ;; This  file is free  software; you  can redistribute  it and/or
 ;; modify it under the terms of the GNU General Public License as
@@ -200,5 +200,7 @@
 ;                 ;;sed-settings
 ;                 lua-mode-settings
 ;                 ))
+
+(require 'lua-mode-settings)
 
 (provide 'dev-settings)
