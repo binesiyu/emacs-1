@@ -66,6 +66,12 @@
 (define-prefix-command 'm-spc-map)
 (global-set-key (kbd "M-SPC") 'm-spc-map)
 
+(define-prefix-command 'ctl-x-m-map)
+(define-key ctl-x-m-map (kbd "a") 'org-agenda)
+(define-key ctl-x-m-map (kbd "c") 'org-capture)
+
+(global-set-key (kbd "C-x m") 'ctl-x-m-map)
+
 (eal-define-keys-commonly
  global-map
  `(
